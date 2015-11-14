@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  apellido: MyString
+  rut: MyString
+  jornada: MyString
+  direccion: MyString
+  comuna: MyString
+  parent_id: 
+  van_id: 
+  school_id: 
+
+two:
+  nombre: MyString
+  apellido: MyString
+  rut: MyString
+  jornada: MyString
+  direccion: MyString
+  comuna: MyString
+  parent_id: 
+  van_id: 
+  school_id: 

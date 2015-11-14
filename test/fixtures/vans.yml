@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patente: MyString
+  capacidad: 1
+  estado: MyString
+  kilimetrage: 1
+
+two:
+  patente: MyString
+  capacidad: 1
+  estado: MyString
+  kilimetrage: 1

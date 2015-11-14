@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patente:</strong>
+  <%= @van.patente %>
+</p>
+
+<p>
+  <strong>Capacidad:</strong>
+  <%= @van.capacidad %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @van.estado %>
+</p>
+
+<p>
+  <strong>Kilimetrage:</strong>
+  <%= @van.kilimetrage %>
+</p>
+
+<%= link_to 'Edit', edit_van_path(@van) %> |
+<%= link_to 'Back', vans_path %>
