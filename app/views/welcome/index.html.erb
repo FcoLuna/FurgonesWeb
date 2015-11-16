@@ -1,8 +1,10 @@
+<!doctype html>
+<html>
 <header>
 <div class="navbar navbar-fixed-top">
 <nav class="navbar navbar-inverse">
   <ul class="nav nav-pills">
-  <% if user_signed_in? %>
+<% if user_signed_in? %>
 Logged in as <strong><%= current_user.email %></strong>.
 <li role="presentation" class="dropdown" href="#">
   <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -32,3 +34,7 @@ Logged in as <strong><%= current_user.email %></strong>.
 </ul>
 </nav>
 </header>
+<body>
+</div>
+</body>
+</html>

@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_one :workers, dependent: :destroy
   has_one :parents, dependent: :destroy
-  validates :email, uniqueness: {case_sensitive: false ,message: "ya existe una correo con ese nombre"}
+  validates :email, uniqueness: {case_sensitive: false ,message: "ya existe un email con ese nombre"}
 end
