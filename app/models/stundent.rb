@@ -1,5 +1,5 @@
 class Stundent < ActiveRecord::Base
-  belongs_to :parent
+  belongs_to :parent, dependent: :destroy
   belongs_to :van
   belongs_to :school
   validates :nombre, presence: true
