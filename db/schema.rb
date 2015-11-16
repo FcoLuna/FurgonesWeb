@@ -13,38 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20151114005259) do
 
-  create_table "alumnos", force: :cascade do |t|
-    t.string   "nombre",            limit: 255
-    t.string   "horario",           limit: 255
-    t.integer  "id_apoderado",      limit: 4
-    t.integer  "id_colegio",        limit: 4
-    t.string   "id_furgon_integer", limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "apoderados", force: :cascade do |t|
-    t.string   "nombre",     limit: 255
-    t.integer  "telefono",   limit: 4
-    t.integer  "paga",       limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "colegios", force: :cascade do |t|
-    t.string   "nombre",     limit: 255
-    t.integer  "telefono",   limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "furgones", force: :cascade do |t|
-    t.string   "patente",    limit: 255
-    t.string   "estado",     limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "parents", force: :cascade do |t|
     t.string   "nombre",     limit: 255
     t.string   "apellido",   limit: 255
@@ -85,15 +53,6 @@ ActiveRecord::Schema.define(version: 20151114005259) do
   add_index "stundents", ["school_id"], name: "index_stundents_on_school_id", using: :btree
   add_index "stundents", ["van_id"], name: "index_stundents_on_van_id", using: :btree
 
-  create_table "trabajadores", force: :cascade do |t|
-    t.string   "nombre",     limit: 255
-    t.string   "tipo",       limit: 255
-    t.integer  "sueldo",     limit: 4
-    t.integer  "id_furgon",  limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -112,25 +71,6 @@ ActiveRecord::Schema.define(version: 20151114005259) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "usuarios", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.integer  "tipo",                   limit: 4
-    t.string   "reset_password_token",   limit: 255
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
-  end
-
-  add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
-  add_index "usuarios", ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
 
   create_table "vans", force: :cascade do |t|
     t.string   "patente",     limit: 255
