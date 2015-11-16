@@ -28,7 +28,7 @@ class VansController < ApplicationController
 
     respond_to do |format|
       if @van.save
-        format.html { redirect_to @van, notice: 'Van was successfully created.' }
+        format.html { redirect_to @van, notice: 'Furgon creado con exito.' }
         format.json { render :show, status: :created, location: @van }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class VansController < ApplicationController
   def update
     respond_to do |format|
       if @van.update(van_params)
-        format.html { redirect_to @van, notice: 'Van was successfully updated.' }
+        format.html { redirect_to @van, notice: 'Furgon editado con exito.' }
         format.json { render :show, status: :ok, location: @van }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class VansController < ApplicationController
   def destroy
     @van.destroy
     respond_to do |format|
-      format.html { redirect_to vans_url, notice: 'Van was successfully destroyed.' }
+      format.html { redirect_to vans_url, notice: 'Furgon eliminado con exito.' }
       format.json { head :no_content }
     end
   end

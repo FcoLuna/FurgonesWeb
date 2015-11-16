@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :workers
   has_many :parents
+  validates :email, uniqueness: {case_sensitive: false ,message: "ya existe una correo con ese nombre"}
 end
-

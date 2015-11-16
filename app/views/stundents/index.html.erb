@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Stundents</h1>
-
-<table>
+<h1>Lista de Alumnos</h1>
+<div class="panel panel-default">
+<table class="table">
   <thead>
     <tr>
       <th>Nombre</th>
       <th>Apellido</th>
-      <th>Rut</th>
       <th>Jornada</th>
       <th>Direccion</th>
       <th>Comuna</th>
@@ -23,16 +22,15 @@
       <tr>
         <td><%= stundent.nombre %></td>
         <td><%= stundent.apellido %></td>
-        <td><%= stundent.rut %></td>
         <td><%= stundent.jornada %></td>
         <td><%= stundent.direccion %></td>
         <td><%= stundent.comuna %></td>
         <td><%= stundent.parent %></td>
         <td><%= stundent.van %></td>
         <td><%= stundent.school %></td>
-        <td><%= link_to 'Show', stundent %></td>
-        <td><%= link_to 'Edit', edit_stundent_path(stundent) %></td>
-        <td><%= link_to 'Destroy', stundent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', stundent %></td>
+        <td><%= link_to 'Editar', edit_stundent_path(stundent) %></td>
+        <td><%= link_to 'Eliminar', stundent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Stundent', new_stundent_path %>
+<%= link_to 'Nuevo Estudiante', new_stundent_path %>

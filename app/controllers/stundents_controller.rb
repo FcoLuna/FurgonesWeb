@@ -28,7 +28,7 @@ class StundentsController < ApplicationController
 
     respond_to do |format|
       if @stundent.save
-        format.html { redirect_to @stundent, notice: 'Stundent was successfully created.' }
+        format.html { redirect_to @stundent, notice: 'Alumno creado con exito.' }
         format.json { render :show, status: :created, location: @stundent }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class StundentsController < ApplicationController
   def update
     respond_to do |format|
       if @stundent.update(stundent_params)
-        format.html { redirect_to @stundent, notice: 'Stundent was successfully updated.' }
+        format.html { redirect_to @stundent, notice: 'Alumno editado con exito.' }
         format.json { render :show, status: :ok, location: @stundent }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class StundentsController < ApplicationController
   def destroy
     @stundent.destroy
     respond_to do |format|
-      format.html { redirect_to stundents_url, notice: 'Stundent was successfully destroyed.' }
+      format.html { redirect_to stundents_url, notice: 'Alumno eliminado con exito.' }
       format.json { head :no_content }
     end
   end

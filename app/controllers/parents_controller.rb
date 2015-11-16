@@ -28,7 +28,7 @@ class ParentsController < ApplicationController
 
     respond_to do |format|
       if @parent.save
-        format.html { redirect_to @parent, notice: 'Parent was successfully created.' }
+        format.html { redirect_to @parent, notice: 'Apoderado Creado Correctamente.' }
         format.json { render :show, status: :created, location: @parent }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ParentsController < ApplicationController
   def update
     respond_to do |format|
       if @parent.update(parent_params)
-        format.html { redirect_to @parent, notice: 'Parent was successfully updated.' }
+        format.html { redirect_to @parent, notice: 'Apoderado editado correctamente.' }
         format.json { render :show, status: :ok, location: @parent }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ParentsController < ApplicationController
   def destroy
     @parent.destroy
     respond_to do |format|
-      format.html { redirect_to parents_url, notice: 'Parent was successfully destroyed.' }
+      format.html { redirect_to parents_url, notice: 'Apoderado eliminado correctamente.' }
       format.json { head :no_content }
     end
   end

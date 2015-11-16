@@ -10,10 +10,6 @@
   <%= @stundent.apellido %>
 </p>
 
-<p>
-  <strong>Rut:</strong>
-  <%= @stundent.rut %>
-</p>
 
 <p>
   <strong>Jornada:</strong>
@@ -31,19 +27,19 @@
 </p>
 
 <p>
-  <strong>Parent:</strong>
+  <strong>Apoderado:</strong>
   <%= @stundent.parent %>
 </p>
 
 <p>
-  <strong>Van:</strong>
+  <strong>Furgon:</strong>
   <%= @stundent.van %>
 </p>
 
 <p>
-  <strong>School:</strong>
+  <strong>Escuela:</strong>
   <%= @stundent.school %>
 </p>
 
-<%= link_to 'Edit', edit_stundent_path(@stundent) %> |
-<%= link_to 'Back', stundents_path %>
+<%= link_to 'Editar', edit_stundent_path(@stundent) %> |
+<%= link_to 'Atrás', stundents_path %>

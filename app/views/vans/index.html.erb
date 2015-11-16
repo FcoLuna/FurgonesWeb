@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Vans</h1>
-
-<table>
+<div class="panel panel-default">
+<table class="table">
   <thead>
     <tr>
       <th>Patente</th>
@@ -20,9 +20,9 @@
         <td><%= van.capacidad %></td>
         <td><%= van.estado %></td>
         <td><%= van.kilimetrage %></td>
-        <td><%= link_to 'Show', van %></td>
-        <td><%= link_to 'Edit', edit_van_path(van) %></td>
-        <td><%= link_to 'Destroy', van, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', van %></td>
+        <td><%= link_to 'Editar', edit_van_path(van) %></td>
+        <td><%= link_to 'Elominar', van, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Van', new_van_path %>
+<%= link_to 'Nuevo Furgon', new_van_path %>

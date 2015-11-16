@@ -16,19 +16,14 @@
 </p>
 
 <p>
-  <strong>Rut:</strong>
-  <%= @parent.rut %>
-</p>
-
-<p>
   <strong>Pago:</strong>
   <%= @parent.pago %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>Usuario:</strong>
   <%= @parent.user %>
 </p>
 
-<%= link_to 'Edit', edit_parent_path(@parent) %> |
-<%= link_to 'Back', parents_path %>
+<%= link_to 'Editar', edit_parent_path(@parent) %> |
+<%= link_to 'Atras', parents_path %>
