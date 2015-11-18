@@ -1,10 +1,10 @@
-<%= form_for(@stundent) do |f| %>
-  <% if @stundent.errors.any? %>
+<%= form_for(@student) do |f| %>
+  <% if @student.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@stundent.errors.count, "error") %> prohibited this stundent from being saved:</h2>
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
 
       <ul>
-      <% @stundent.errors.full_messages.each do |message| %>
+      <% @student.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -18,6 +18,10 @@
   <div class="field">
     <%= f.label :apellido %><br>
     <%= f.text_field :apellido %>
+  </div>
+  <div class="field">
+    <%= f.label :rut %><br>
+    <%= f.text_field :rut %>
   </div>
   <div class="field">
     <%= f.label :jornada %><br>
@@ -36,12 +40,12 @@
     <%= f.text_field :parent_id %>
   </div>
   <div class="field">
-    <%= f.label :van_id %><br>
-    <%= f.text_field :van_id %>
-  </div>
-  <div class="field">
     <%= f.label :school_id %><br>
     <%= f.text_field :school_id %>
+  </div>
+  <div class="field">
+    <%= f.label :van_id %><br>
+    <%= f.text_field :van_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

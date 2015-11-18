@@ -1,5 +1,5 @@
 class School < ActiveRecord::Base
-	has_many :students
+	has_many :stundents,dependent: :destroy
 	validates :nombre, presence: true
   validates :direccion, presence: true
   validates :comuna, presence: true

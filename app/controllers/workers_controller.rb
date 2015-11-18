@@ -69,6 +69,6 @@ class WorkersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:nombre, :apellido, :rut, :tipo_trabajador, :sueldo, :van_id, :user_id)
+      params.require(:worker).permit(:nombre, :apellido, :rut, :tipo_trabajador, :sueldo, :van_id)
     end
 end

@@ -6,7 +6,6 @@ class CreateParents < ActiveRecord::Migration
       t.integer :telefono
       t.string :rut
       t.integer :pago
-      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end

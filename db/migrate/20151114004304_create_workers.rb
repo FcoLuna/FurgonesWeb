@@ -7,7 +7,6 @@ class CreateWorkers < ActiveRecord::Migration
       t.string :tipo_trabajador
       t.integer :sueldo
       t.references :van, index: true, foreign_key: true
-      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end

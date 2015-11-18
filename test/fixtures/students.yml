@@ -8,8 +8,8 @@ one:
   direccion: MyString
   comuna: MyString
   parent_id: 
-  van_id: 
   school_id: 
+  van_id: 
 
 two:
   nombre: MyString
@@ -19,5 +19,5 @@ two:
   direccion: MyString
   comuna: MyString
   parent_id: 
-  van_id: 
   school_id: 
+  van_id: 

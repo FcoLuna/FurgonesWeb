@@ -2,7 +2,7 @@
 
 <h1>Lista de apoderados</h1>
 
-<div class="panel panel-default">
+<div class="panel panel-primary">
 <table class="table">
   <thead>
     <tr>
@@ -10,8 +10,7 @@
       <th>Apellido</th>
       <th>Telefono</th>
       <th>Pago</th>
-      <th>User</th>
-      <th colspan="3"></th>
+    <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -22,7 +21,6 @@
         <td><%= parent.apellido %></td>
         <td><%= parent.telefono %></td>
         <td><%= parent.pago %></td>
-        <td><%= parent.user %></td>
         <td><%= link_to 'Mostrar', parent %></td>
         <td><%= link_to 'Editar', edit_parent_path(parent) %></td>
         <td><%= link_to 'Eliminar', parent, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
@@ -30,7 +28,7 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'Nuevo Apoderado', new_parent_path %>
+</div>
+<body>
+  <%= link_to 'Nuevo Apoderado', new_parent_path %>
+</body>

@@ -3,7 +3,5 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_one :workers, dependent: :destroy
-  has_one :parents, dependent: :destroy
   validates :email, uniqueness: {case_sensitive: false ,message: "ya existe un email con ese nombre"}
 end
