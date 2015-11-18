@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151114005259) do
+ActiveRecord::Schema.define(version: 20151117174335) do
 
   create_table "parents", force: :cascade do |t|
     t.string   "nombre",     limit: 255
@@ -19,12 +19,9 @@ ActiveRecord::Schema.define(version: 20151114005259) do
     t.integer  "telefono",   limit: 4
     t.string   "rut",        limit: 255
     t.integer  "pago",       limit: 4
-    t.integer  "user_id",    limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
-
-  add_index "parents", ["user_id"], name: "index_parents_on_user_id", using: :btree
 
   create_table "schools", force: :cascade do |t|
     t.string   "nombre",     limit: 255
@@ -35,7 +32,7 @@ ActiveRecord::Schema.define(version: 20151114005259) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "stundents", force: :cascade do |t|
+  create_table "students", force: :cascade do |t|
     t.string   "nombre",     limit: 255
     t.string   "apellido",   limit: 255
     t.string   "rut",        limit: 255
@@ -43,15 +40,15 @@ ActiveRecord::Schema.define(version: 20151114005259) do
     t.string   "direccion",  limit: 255
     t.string   "comuna",     limit: 255
     t.integer  "parent_id",  limit: 4
-    t.integer  "van_id",     limit: 4
     t.integer  "school_id",  limit: 4
+    t.integer  "van_id",     limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
-  add_index "stundents", ["parent_id"], name: "index_stundents_on_parent_id", using: :btree
-  add_index "stundents", ["school_id"], name: "index_stundents_on_school_id", using: :btree
-  add_index "stundents", ["van_id"], name: "index_stundents_on_van_id", using: :btree
+  add_index "students", ["parent_id"], name: "index_students_on_parent_id", using: :btree
+  add_index "students", ["school_id"], name: "index_students_on_school_id", using: :btree
+  add_index "students", ["van_id"], name: "index_students_on_van_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -88,18 +85,14 @@ ActiveRecord::Schema.define(version: 20151114005259) do
     t.string   "tipo_trabajador", limit: 255
     t.integer  "sueldo",          limit: 4
     t.integer  "van_id",          limit: 4
-    t.integer  "user_id",         limit: 4
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
 
-  add_index "workers", ["user_id"], name: "index_workers_on_user_id", using: :btree
   add_index "workers", ["van_id"], name: "index_workers_on_van_id", using: :btree
 
-  add_foreign_key "parents", "users"
-  add_foreign_key "stundents", "parents"
-  add_foreign_key "stundents", "schools"
-  add_foreign_key "stundents", "vans"
-  add_foreign_key "workers", "users"
+  add_foreign_key "students", "parents"
+  add_foreign_key "students", "schools"
+  add_foreign_key "students", "vans"
   add_foreign_key "workers", "vans"
 end

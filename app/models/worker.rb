@@ -1,6 +1,5 @@
 class Worker < ActiveRecord::Base
   belongs_to :van
-  belongs_to :user
   validates :apellido, presence: true
   validates :nombre, presence: true
   validates :tipo_trabajador, presence: true

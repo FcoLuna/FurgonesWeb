@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
-  resources :stundents
+  resources :students
   resources :workers
+
   resources :vans
+
   resources :schools
-  resources :parents
+
+  resources :parents do
+  resources :sudents
+  end
+
   devise_for :users
   get 'welcome/index'
 

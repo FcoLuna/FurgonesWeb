@@ -1,6 +1,6 @@
-class CreateStundents < ActiveRecord::Migration
+class CreateStudents < ActiveRecord::Migration
   def change
-    create_table :stundents do |t|
+    create_table :students do |t|
       t.string :nombre
       t.string :apellido
       t.string :rut
@@ -8,8 +8,8 @@ class CreateStundents < ActiveRecord::Migration
       t.string :direccion
       t.string :comuna
       t.references :parent, index: true, foreign_key: true
-      t.references :van, index: true, foreign_key: true
       t.references :school, index: true, foreign_key: true
+      t.references :van, index: true, foreign_key: true
 
       t.timestamps null: false
     end
