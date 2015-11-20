@@ -1,1 +1,1 @@
-json.extract! @parent, :id, :nombre, :apellido, :telefono, :rut, :pago, :user_id, :created_at, :updated_at
+json.extract! @parent, :id, :nombre, :apellido, :telefono, :rut, :pago, :created_at, :updated_at

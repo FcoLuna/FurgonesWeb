@@ -5,5 +5,4 @@ class Worker < ActiveRecord::Base
   validates :tipo_trabajador, presence: true
   validates :sueldo, presence: true
   validates :apellido, presence: true
-  validates :jornada, presence: true
 end

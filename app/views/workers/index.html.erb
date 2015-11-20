@@ -2,7 +2,8 @@
 
 <h1>Lista de Trabajadores</h1>
 
-<table>
+<div class="panel panel-primary">
+<table class="table">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -23,7 +24,7 @@
         <td><%= worker.rut %></td>
         <td><%= worker.tipo_trabajador %></td>
         <td><%= worker.sueldo %></td>
-        <td><%= worker.van %></td>
+        <td><%= worker.van.patente %></td>
         <td><%= link_to 'Mostrar', worker %></td>
         <td><%= link_to 'Editar', edit_worker_path(worker) %></td>
         <td><%= link_to 'Eliminar', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,7 +32,8 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Worker', new_worker_path %>
+</div>
+<body>
+<%= link_to 'Nuevo Trabajador', new_worker_path %>
+<%= link_to 'Atrás','welcome/index'%>
+</body>

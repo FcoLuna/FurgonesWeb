@@ -23,19 +23,25 @@
     <%= f.label :rut %><br>
     <%= f.text_field :rut %>
   </div>
-  <div class="field">
-    <%= f.label :tipo_trabajador %><br>
-    <%= f.text_field :tipo_trabajador %>
-  </div>
+
+  <div class="control-group">
+      <%= f.label "tipo_trabajador", class: 'control-label' %>
+      <div class="controls">
+        <%= f.select(:tipo_trabajador, options_for_select([['Chofer', 'Chofer'], ['Auxiliar', 'Auxiliar']]), { prompt: 'Seleccione un Tipo de Trabajador' }) %>
+ </div>
+
   <div class="field">
     <%= f.label :sueldo %><br>
     <%= f.number_field :sueldo %>
   </div>
-  <div class="field">
-    <%= f.label :van_id %><br>
-    <%= f.text_field :van_id %>
+  <div class="control-group">
+  <%= f.label :van_id, class: 'control-label' %>
+  <div class="controls">
+    <%= collection_select( :worker, :van_id, Van.all, :id, :patente, {}, { :multiple => false } ) %>
   </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>

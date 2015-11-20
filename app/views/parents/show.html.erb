@@ -19,11 +19,7 @@
   <strong>Pago:</strong>
   <%= @parent.pago %>
 </p>
-
 <p>
-  <strong>Usuario:</strong>
-  <%= @parent.user %>
+<%= link_to 'Editar', edit_parent_path(@parent) %> 
 </p>
-
-<%= link_to 'Editar', edit_parent_path(@parent) %> |
 <%= link_to 'Atrás', parents_path %>
