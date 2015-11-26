@@ -35,6 +35,7 @@
     <%= f.number_field :sueldo %>
   </div>
   <div class="control-group">
+
   <%= f.label :van_id, "Furgon", class: 'control-label' %>
   <div class="controls">
     <%= collection_select( :worker, :van_id, Van.all, :id, :patente, {}, { :multiple => false } ) %>

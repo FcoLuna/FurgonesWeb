@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Students</h1>
+<h1>Lista de Alumnos</h1>
 
 <div class="panel panel-primary">
 <table class="table">
@@ -18,7 +18,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-ombre
   <tbody>
     <% @students.each do |student| %>
       <tr>
@@ -33,7 +32,7 @@ ombre
         <td><%= student.van.patente %></td>
         <td><%= link_to 'Mostrar', student %></td>
         <td><%= link_to 'Editar', edit_student_path(student) %></td>
-        <td><%= link_to 'Eliminar', student, method: :delete, data: { confirm: '¿está seguro?' } %></td>
+        <td><%= link_to 'Eliminar', student, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>

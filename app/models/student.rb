@@ -1,5 +1,5 @@
 class Student < ActiveRecord::Base
-  belongs_to :parent,dependent: :destroy
+  belongs_to :parent
   belongs_to :school
   belongs_to :van
   validates_format_of :rut,

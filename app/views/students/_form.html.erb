@@ -37,16 +37,19 @@
     <%= f.text_field :comuna %>
   </div>
   <div class="control-group">
+
   <%= f.label :parent_id, "Apoderado", class: 'control-label' %>
-  <div class="controls">
+ <div class="controls">
     <%= collection_select( :student, :parent_id, Parent.all, :id, :nombre, {}, { :multiple => false } ) %>
   </div>
   <div class="control-group">
+
   <%= f.label :school_id, "Colegio", class: 'control-label' %>
-  <div class="controls">
+<div class="controls">
     <%= collection_select( :student, :school_id, School.all, :id, :nombre, {}, { :multiple => false } ) %>
   </div>
   <div class="control-group">
+
   <%= f.label :van_id, "Furgon", class: 'control-label' %>
   <div class="controls">
     <%= collection_select( :student, :van_id, Van.all, :id, :patente, {}, { :multiple => false } ) %>

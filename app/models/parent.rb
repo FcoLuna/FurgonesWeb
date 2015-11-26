@@ -1,5 +1,5 @@
 class Parent < ActiveRecord::Base
-  has_many :students
+  has_many :students, dependent: :destroy
   validates :nombre, presence:true
   validates :apellido, presence: true
   validates :pago, presence: true
