@@ -21,8 +21,8 @@
 </p>
 
 <p>
-  <strong>Van:</strong>
-  <%= @worker.van.patente %>
+  <strong>Furgón:</strong>
+  <%= @worker.van ? @worker.van.patente : 'Asigne Furgón' %>
 </p>
 
 <%= link_to 'Editar', edit_worker_path(@worker) %> |

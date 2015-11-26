@@ -38,10 +38,10 @@
 <p>
   <strong>Colegio:</strong>
 </p>
-  <%= @student.school.nombre %>
+  <%= @student.school ? @student.school.nombre : 'Asigne Colegio'%>
 <p>
   <strong>Furgón:</strong>
-  <%= @student.van.patente %>
+  <%= @student.van ? @student.van.patente : 'Asigne Furgón'%>
 </p>
 
 <%= link_to 'Editar', edit_student_path(@student) %> |
