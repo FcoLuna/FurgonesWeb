@@ -28,8 +28,8 @@
         <td><%= student.direccion %></td>
         <td><%= student.comuna %></td>
         <td><%= student.parent.nombre %></td>
-        <td><%= student.school.nombre %></td>
-        <td><%= student.van.patente %></td>
+        <td><%= student.school ? student.school.nombre : 'Asigne Colegio' %></td>
+        <td><%= student.van ? student.van.patente : 'Asigne Furgón' %></td>
         <td><%= link_to 'Mostrar', student %></td>
         <td><%= link_to 'Editar', edit_student_path(student) %></td>
         <td><%= link_to 'Eliminar', student, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
