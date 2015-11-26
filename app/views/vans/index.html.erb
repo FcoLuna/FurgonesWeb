@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Vans</h1>
-<div class="panel panel-default">
+<h1>Lista de Furgones</h1>
+<div class="panel panel-primary">
 <table class="table">
   <thead>
     <tr>
       <th>Patente</th>
       <th>Capacidad</th>
       <th>Estado</th>
-      <th>Kilimetrage</th>
+      <th>Kilometraje</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,12 +22,12 @@
         <td><%= van.kilimetrage %></td>
         <td><%= link_to 'Mostrar', van %></td>
         <td><%= link_to 'Editar', edit_van_path(van) %></td>
-        <td><%= link_to 'Elominar', van, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Eliminar', van, method: :delete, data: { confirm: 'Usted está seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
+</div>
 
 <%= link_to 'Nuevo Furgon', new_van_path %>
+<%= link_to 'Atrás','welcome/index'%>

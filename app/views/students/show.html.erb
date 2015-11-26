@@ -32,17 +32,16 @@
 
 <p>
   <strong>Apoderado:</strong>
-  <%= @student.parent %>
+  <%= @student.parent.nombre %>
 </p>
 
 <p>
   <strong>Colegio:</strong>
-  <%= @student.school %>
 </p>
-
+  <%= @student.school.nombre %>
 <p>
   <strong>Furgón:</strong>
-  <%= @student.van %>
+  <%= @student.van.patente %>
 </p>
 
 <%= link_to 'Editar', edit_student_path(@student) %> |

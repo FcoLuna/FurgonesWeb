@@ -8,8 +8,10 @@
     <tr>
       <th>Nombre</th>
       <th>Apellido</th>
+      <th>Rut</th>
       <th>Telefono</th>
       <th>Pago</th>
+
     <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,6 +21,7 @@
       <tr>
         <td><%= parent.nombre %></td>
         <td><%= parent.apellido %></td>
+        <td><%= parent.rut %></td>
         <td><%= parent.telefono %></td>
         <td><%= parent.pago %></td>
         <td><%= link_to 'Mostrar', parent %></td>
@@ -31,4 +34,5 @@
 </div>
 <body>
   <%= link_to 'Nuevo Apoderado', new_parent_path %>
+  <%= link_to 'Atrás','welcome/index'%>
 </body>

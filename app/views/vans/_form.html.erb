@@ -19,12 +19,13 @@
     <%= f.label :capacidad %><br>
     <%= f.number_field :capacidad %>
   </div>
+  <div class="control-group">
+      <%= f.label "estado", class: 'control-label' %>
+      <div class="controls">
+        <%= f.select(:estado, options_for_select([['Exelente', 'Exelente'], ['Bueno', 'Bueno'],['Regular', 'Regular'],['Malo','Malo'], ['Pesimo', 'Pesimo']]), { prompt: 'Seleccione Estado del Vehiculo' }) %>
+ </div>
   <div class="field">
-    <%= f.label :estado %><br>
-    <%= f.text_field :estado %>
-  </div>
-  <div class="field">
-    <%= f.label :kilimetrage %><br>
+    <%= f.label :kilimetrage, "Kilometrage" %><br>
     <%= f.number_field :kilimetrage %>
   </div>
   <div class="actions">

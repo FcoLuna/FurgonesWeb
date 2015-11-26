@@ -23,10 +23,11 @@
     <%= f.label :rut %><br>
     <%= f.text_field :rut %>
   </div>
-  <div class="field">
-    <%= f.label :jornada %><br>
-    <%= f.text_field :jornada %>
-  </div>
+   <div class="control-group">
+      <%= f.label "jornada", class: 'control-label' %>
+      <div class="controls">
+        <%= f.select(:jornada, options_for_select([['Mañana', 'Mañana'], ['Tarde', 'Tarde'], ['Completa', 'Completa']]), { prompt: 'Seleccione El tipo de jornada' }) %>
+ </div>
   <div class="field">
     <%= f.label :direccion %><br>
     <%= f.text_field :direccion %>
@@ -35,17 +36,20 @@
     <%= f.label :comuna %><br>
     <%= f.text_field :comuna %>
   </div>
-  <div class="field">
-    <%= f.label :parent_id %><br>
-    <%= f.text_field :parent_id %>
+  <div class="control-group">
+  <%= f.label :parent_id, "Apoderado", class: 'control-label' %>
+  <div class="controls">
+    <%= collection_select( :student, :parent_id, Parent.all, :id, :nombre, {}, { :multiple => false } ) %>
   </div>
-  <div class="field">
-    <%= f.label :school_id %><br>
-    <%= f.text_field :school_id %>
+  <div class="control-group">
+  <%= f.label :school_id, "Colegio", class: 'control-label' %>
+  <div class="controls">
+    <%= collection_select( :student, :school_id, School.all, :id, :nombre, {}, { :multiple => false } ) %>
   </div>
-  <div class="field">
-    <%= f.label :van_id %><br>
-    <%= f.text_field :van_id %>
+  <div class="control-group">
+  <%= f.label :van_id, "Furgon", class: 'control-label' %>
+  <div class="controls">
+    <%= collection_select( :student, :van_id, Van.all, :id, :patente, {}, { :multiple => false } ) %>
   </div>
   <div class="actions">
     <%= f.submit %>
