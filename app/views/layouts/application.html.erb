@@ -1,14 +1,32 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-  <title>Furgones</title>
+  <title>Furgones Flores</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
 </head>
 <body>
-<%= yield %>
-<p class="notice" style="<%= "display:none;" if notice.nil? %>"><%= notice %></p>
-<p class="alert" "<%= "display:none;" if alert.nil? %>"><%= alert %></p>
+
+
+    
+    <%if notice%>
+      <div class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">Cerrar</button>
+        <p class="alert-link"><%= notice %></p>
+    </div>
+		
+	<%end%>
+	<%if alert%>
+     <div class="alert alert-dismissible alert-danger">
+        <button type="button" class="close" data-dismiss="alert">Cerrar</button>
+        <p class="alert-link"><%= alert %></p>
+    </div>
+	<%end%>
+	<%= yield %>
+
 </body>
 </html>

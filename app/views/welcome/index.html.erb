@@ -1,33 +1,3 @@
 <header>
-<div class="navbar navbar-fixed-top">
-<nav class="navbar navbar-inverse">
-  <ul class="nav nav-pills">
-<% if user_signed_in? %>
-Logged in as <strong><%= current_user.email %></strong>.
-<li role="presentation" class="dropdown" href="#">
-  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-    <font color="#A4A4A4">Gestionar</font>  <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu">
-      <li role="presentation"><%= link_to 'Apoderados', controller: 'parents' %></li>
-      <li role="presentation"><%= link_to 'Colegios', controller: 'schools' %></li>
-      <li role="presentation"><%= link_to 'Furgones', controller: 'vans' %></li>
-      <li role="presentation"><%= link_to 'Trabajador', controller: 'workers' %></li>
-      <li role="presentation"><%= link_to 'Alumno', controller: 'students' %></li>
-  </ul>
-</li>
-<li role="presentation" class="nav">
-<%= link_to 'Editar', edit_user_registration_path, :class => 'navbar-link' %>
-</li>
-<li role="presentation" class="nav" color="#A4A4A4">
-<%= link_to "Desconectar", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-</li>
-<% else %>
-<li role="presentation" class="nav">
-<%= link_to "Crear Cuenta", new_user_registration_path, :class => 'navbar-link'  %>
-</li>
-<li role="presentation" class="nav">
-<%= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
-</li>
-<% end %>
+    <%=render "partials/navigation"%>
 </header>
