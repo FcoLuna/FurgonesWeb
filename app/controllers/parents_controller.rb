@@ -1,5 +1,6 @@
 class ParentsController < ApplicationController
-  before_action :authenticate_admin!, only: [:index, :show]
+  #before_action :authenticate_admin!, only: [:index, :show]
+  before_action :set_parent, only: [:show, :edit, :update, :destroy]
 
   # GET /parents
   # GET /parents.json

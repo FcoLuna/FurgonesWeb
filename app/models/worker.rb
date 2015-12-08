@@ -19,5 +19,7 @@ class Worker < ActiveRecord::Base
                       :message => "Formato no Valido EJ: 123.456.789-k"
 
   validates :rut, uniqueness: {case_sensitive: false ,message: "ya existe"}
+  validates_numericality_of :sueldo, greater_than_or_equal_to: 0,
+                            :message => "Debe ser positivo"
 
 end
