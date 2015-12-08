@@ -1,17 +1,48 @@
-<table>
-  <thead>
-    <tr>
-      <th>titulo</th>
-      <th>contenido</th>
+<%suma = 0%>
+</p>  <div class="panel panel-primary">
+  <table class="table">
+    <thead>
+      <tr>
+      <th>Nombre:</th>
+      <th>Apellido:</th>
+      <th>Pago:</th>
     </tr>
   </thead>
-
   <tbody>
-    <% @publicaciones.each do |publicacion| %>
-      <tr>
-        <td><%= publicacion.titulo %></td>
-        <td><%= publicacion.contenido %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<% Parent.all.each do |t| %>
+  <tr>
+  <td><%= t.nombre %></td>
+  <td><%= t.apellido %></td>
+  <td><%= t.pago %></td>
+  <%suma = suma + t.pago%>
+  </tr>
+<%end%>
+</tbody>
 </table>
+<table class="table">
+  <thead>
+    <tr>
+    <th>Nombre:</th>
+    <th>Apellido:</th>
+    <th>Sueldo:</th>
+  </tr>
+  </thead>
+<tbody>
+<% Worker.all.each do |t| %>
+<tr>
+<td><%= t.nombre %></td>
+<td><%= t.apellido %></td>
+<td><%= t.sueldo %></td>
+<%suma = suma - t.sueldo%>
+</tr>
+<%end%>
+</tbody>
+</table>
+<table class="table">
+<thead>
+  <tr>
+  <th>La ganancia Total,descontando los Sueldos es de: <%=suma%> $</th>
+</tr>
+</thead
+</table>
+</div>

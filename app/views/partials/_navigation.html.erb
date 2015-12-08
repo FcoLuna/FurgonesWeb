@@ -19,8 +19,9 @@
                     <li role="presentation"><%= link_to 'Furgones', controller: 'vans' %></li>
                     <li role="presentation"><%= link_to 'Trabajador', controller: 'workers' %></li>
                     <li role="presentation"><%= link_to 'Alumno', controller: 'students' %></li>
-                     </ul>
+                  </ul>
                   </li>
+                  <li ><%= link_to 'Ver ganancia', manage_gain_path%></li>
               <%end%>
         <%if user_signed_in?%>
 
