@@ -6,6 +6,10 @@ class Worker < ActiveRecord::Base
   validates :apellido, presence: true, length:{in:3..20,
         too_short:"demasiado corto",
         too_long:"demasiado largo"}
+  validates_format_of :nombre, :with => /\A[^0-9`!@#\$%\^&*+_=]+\z/,
+                      :message => "Invalido"
+  validates_format_of :apellido, :with => /\A[^0-9`!@#\$%\^&*+_=]+\z/,
+                      :message => "Invalido"
   validates :tipo_trabajador, presence: true
   validates :sueldo, presence: true
   validates :apellido, presence: true
