@@ -1,33 +1,47 @@
-<header>
-<div class="navbar navbar-fixed-top">
-<nav class="navbar navbar-inverse">
-  <ul class="nav nav-pills">
-<% if user_signed_in? %>
-Logged in as <strong><%= current_user.email %></strong>.
-<li role="presentation" class="dropdown" href="#">
-  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-    <font color="#A4A4A4">Gestionar</font>  <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu">
-      <li role="presentation"><%= link_to 'Apoderados', controller: 'parents' %></li>
-      <li role="presentation"><%= link_to 'Colegios', controller: 'schools' %></li>
-      <li role="presentation"><%= link_to 'Furgones', controller: 'vans' %></li>
-      <li role="presentation"><%= link_to 'Trabajador', controller: 'workers' %></li>
-      <li role="presentation"><%= link_to 'Alumno', controller: 'students' %></li>
-  </ul>
-</li>
-<li role="presentation" class="nav">
-<%= link_to 'Editar', edit_user_registration_path, :class => 'navbar-link' %>
-</li>
-<li role="presentation" class="nav" color="#A4A4A4">
-<%= link_to "Desconectar", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-</li>
-<% else %>
-<li role="presentation" class="nav">
-<%= link_to "Crear Cuenta", new_user_registration_path, :class => 'navbar-link'  %>
-</li>
-<li role="presentation" class="nav">
-<%= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
-</li>
-<% end %>
-</header>
+<div id="custom" class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header"><a class="navbar-brand"><%= link_to "Furgones Flores", root_path, :class => "navbar-brand" %></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-right">
+                
+
+        <%if user_signed_in?%>
+            <li >
+              <%= link_to "Editar Perfil", edit_user_registration_path(current_user) %>
+            </li>
+            <li>
+              <%= link_to "Cerrar Sessión",destroy_user_session_path,method: :delete %>
+            </li>
+        <%else%>
+            <li>
+                <%= link_to "Ingresar", new_user_session_path %>
+            </li>
+             <li>
+                <%= link_to "Registrarse", new_user_registration_path %>
+            </li>
+        <%end%>
+          <%if user_signed_in?%>
+          <li role="presentation" class="dropdown" href="#">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+               <font color="#A4A4A4">Gestionar</font>  <span class="caret"></span>
+               </a>
+              <ul class="dropdown-menu">
+                <li role="presentation"><%= link_to 'Apoderados', controller: 'parents' %></li>
+                <li role="presentation"><%= link_to 'Colegios', controller: 'schools' %></li>
+                <li role="presentation"><%= link_to 'Furgones', controller: 'vans' %></li>
+                <li role="presentation"><%= link_to 'Trabajador', controller: 'workers' %></li>
+                <li role="presentation"><%= link_to 'Alumno', controller: 'students' %></li>
+                 </ul>
+              </li>
+          <%end%>
+
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+  
