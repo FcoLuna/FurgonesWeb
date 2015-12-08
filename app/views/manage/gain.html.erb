@@ -7,10 +7,10 @@
   </thead>
 
   <tbody>
-    <% Parent.all.each do |parent| %>
+    <% @publicaciones.each do |publicacion| %>
       <tr>
-        <td><%= parent.nombre %></td>
-        <td><%= parent.pago %></td>
+        <td><%= publicacion.titulo %></td>
+        <td><%= publicacion.contenido %></td>
       </tr>
     <% end %>
   </tbody>
