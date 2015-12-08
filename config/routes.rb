@@ -7,14 +7,10 @@ Rails.application.routes.draw do
   resources :sudents
   end
 
-<<<<<<< HEAD
-  devise_for :users, controllers:{registrations: "registrations"}
+
+devise_for :users, controllers:{registrations: "registrations"}
  resources :users, only: [:show, :index]
   get 'manage/gain'
-=======
-  devise_for :users
-  
->>>>>>> 9d063648c3a786c0e355fba49423f09a38353dd5
   get 'welcome/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
