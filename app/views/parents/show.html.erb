@@ -1,4 +1,5 @@
   <%=render "partials/navigation"%>
+    <%if user_signed_in?%>
 </p>  <div class="panel panel-primary">
 <p id="notice"><%= notice %></p>
 
@@ -57,3 +58,10 @@
     </tbody>
   </table>
   </div>
+  <%else%>
+  <p>
+    <strong>Para acceder a esta información debe iniciar seción</strong>
+  </p>
+
+    <%= link_to 'Atrás', parents_path %>
+    <%end%>

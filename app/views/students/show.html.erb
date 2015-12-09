@@ -1,5 +1,6 @@
+<%=render "partials/navigation"%>
+<%if user_signed_in?%>
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Nombre:</strong>
   <%= @student.nombre %>
@@ -46,3 +47,10 @@
 
 <%= link_to 'Editar', edit_student_path(@student) %> |
 <%= link_to 'Atrás', students_path %>
+<%else%>
+<p>
+  <strong>Para acceder a esta información debe iniciar seción</strong>
+</p>
+
+  <%= link_to 'Atrás', students_path %>
+  <%end%>

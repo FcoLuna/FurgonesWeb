@@ -1,7 +1,7 @@
+<%=render "partials/navigation"%>
 <p id="notice"><%= notice %></p>
-
-<h1>Lista de Alumnos</h1>
-
+  <h1>Lista de Alumnos</h1>
+  <%if user_signed_in?%>
 <div class="panel panel-primary">
 <table class="table">
   <thead>
@@ -41,3 +41,32 @@
 
 <%= link_to 'Nuevo Alumno', new_student_path %>
 <%= link_to 'Atrás','welcome/index'%>
+<%else%>
+<div class="panel panel-primary">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Apoderado</th>
+      <th>Colegio</th>
+      <th>Furgón</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.nombre %></td>
+        <td><%= student.apellido %></td>
+        <td><%= student.parent.nombre %></td>
+        <td><%= student.school ? student.school.nombre : 'Asigne Colegio' %></td>
+        <td><%= student.van ? student.van.patente : 'Asigne Furgón' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<%= link_to 'Atrás','welcome/index'%>
+<%end%>

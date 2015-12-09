@@ -1,5 +1,14 @@
+<%=render "partials/navigation"%>
+<%if user_signed_in?%>
 <h1>Nuevo Colegio</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Atrás', schools_path %>
+<%else%>
+<p>
+  <strong>Para acceder a esta información debe iniciar seción</strong>
+</p>
+
+  <%= link_to 'Atrás', schools_path %>
+  <%end%>

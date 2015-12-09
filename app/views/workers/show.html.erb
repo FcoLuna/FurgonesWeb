@@ -1,3 +1,5 @@
+<%=render "partials/navigation"%>
+<%if user_signed_in?%>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -31,3 +33,9 @@
 
 <%= link_to 'Editar', edit_worker_path(@worker) %> |
 <%= link_to 'Atrás', workers_path %>
+<%else%>
+<p>
+  <strong>Para acceder a esta información debe iniciar seción</strong>
+</p>
+<%= link_to 'Atrás', workers_path %>
+  <%end%>

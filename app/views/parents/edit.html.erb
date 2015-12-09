@@ -1,7 +1,15 @@
   <%=render "partials/navigation"%>
+    <%if user_signed_in?%>
 <h1>Editando Apoderado</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Mostrar', @parent %> |
 <%= link_to 'Atrás', parents_path %>
+<%else%>
+<p>
+  <strong>Para acceder a esta información debe iniciar seción</strong>
+</p>
+
+  <%= link_to 'Atrás', parents_path %>
+  <%end%>
