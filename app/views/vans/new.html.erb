@@ -2,11 +2,11 @@
   <%if user_signed_in?%>
 <h1>Nuevo Furgón</h1>
 <%= render 'form' %>
-<%= link_to 'Atrás', vans_path %>
+<%= link_to 'Atrás', vans_path,class:"btn btn-default btn-lg active btn-sm " %>
 <%else%>
 <p>
   <strong>Para acceder a esta información debe iniciar seción</strong>
 </p>
 
-  <%= link_to 'Atrás', vans_path %>
+  <%= link_to 'Atrás', vans_path,class:"btn btn-default btn-lg active btn-sm " %>
   <%end%>

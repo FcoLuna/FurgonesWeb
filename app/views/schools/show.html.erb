@@ -22,12 +22,12 @@
   <%= @school.comuna %>
 </p>
 
-<%= link_to 'Editar', edit_school_path(@school) %> |
-<%= link_to 'Atrás', schools_path %>
+<%= link_to 'Editar', edit_school_path(@school),class:"btn btn-default btn-sm  btn-lg active" %> |
+<%= link_to 'Atrás', schools_path,class:"btn btn-default btn-lg active btn-sm " %>
 <%else%>
 <p>
   <strong>Para acceder a esta información debe iniciar seción</strong>
 </p>
 
-  <%= link_to 'Atrás', schools_path %>
+  <%= link_to 'Atrás', schools_path,class:"btn btn-default btn-lg active btn-sm " %>
   <%end%>

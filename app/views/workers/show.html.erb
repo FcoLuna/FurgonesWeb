@@ -31,11 +31,11 @@
   <%= @worker.van ? @worker.van.patente : 'Asigne Furgón' %>
 </p>
 
-<%= link_to 'Editar', edit_worker_path(@worker) %> |
-<%= link_to 'Atrás', workers_path %>
+<%= link_to 'Editar', edit_worker_path(@worker) ,class:"btn btn-default btn-lg active btn-sm "%>
+<%= link_to 'Atrás', workers_path ,class:"btn btn-default btn-lg active btn-sm "%>
 <%else%>
 <p>
   <strong>Para acceder a esta información debe iniciar seción</strong>
 </p>
-<%= link_to 'Atrás', workers_path %>
+<%= link_to 'Atrás', workers_path,class:"btn btn-default btn-lg active btn-sm "%>
   <%end%>

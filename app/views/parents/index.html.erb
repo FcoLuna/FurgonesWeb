@@ -23,17 +23,17 @@
         <td><%= parent.rut %></td>
         <td><%= parent.telefono %></td>
         <td><%= parent.pago %></td>
-        <td><%= link_to 'Mostrar', parent %></td>
-        <td><%= link_to 'Editar', edit_parent_path(parent) %></td>
-        <td><%= link_to 'Eliminar', parent, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+        <td><%= link_to 'Mostrar', parent ,class:"btn btn-primary btn-lg active btn-sm " %></td>
+        <td><%= link_to 'Editar', edit_parent_path(parent), class:"btn btn-warning btn-lg active btn-sm " %></td>
+        <td><%= link_to 'Eliminar', parent, method: :delete, data: { confirm: '¿Está seguro?' },class:"btn btn-danger btn-lg active btn-sm " %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
 <body>
-  <%= link_to 'Nuevo Apoderado', new_parent_path %>
-  <%= link_to 'Atrás','welcome/index'%>
+  <%= link_to  'Nuevo Apoderado', new_parent_path,class:"btn btn-default btn-lg active btn-sm "%>
+  <%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm "%>
 </body>
 <%else%>
 <div class="panel panel-primary">
@@ -59,6 +59,6 @@
 </table>
 </div>
 <body>
-  <%= link_to 'Atrás','welcome/index'%>
+  <%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active"%>
 </body>
 <%end%>

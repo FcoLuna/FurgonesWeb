@@ -28,8 +28,8 @@
 </p>
   <tr>
 <p>
-    <%= link_to 'Editar', edit_parent_path(@parent) %>
-    <%= link_to 'Atrás', parents_path %>
+    <%= link_to 'Editar', edit_parent_path(@parent),class:"btn btn-info btn-sm  btn-lg active" %>
+    <%= link_to 'Atrás', parents_path ,class:"btn btn-info btn-sm  btn-lg active"%>
 </p>
   </tr>
 <p>
@@ -49,9 +49,9 @@
           <%if @parent.rut==student.parent.rut%>
           <td><%= student.nombre %></td>
           <td><%= student.apellido %></td>
-          <td><%= link_to 'Mostrar', student %></td>
-          <td><%= link_to 'Editar', edit_student_path(student) %></td>
-          <td><%= link_to 'Eliminar', student, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+          <td><%= link_to 'Mostrar', student,class:"btn btn-primary btn-lg active btn-sm "  %></td>
+          <td><%= link_to 'Editar', edit_student_path(student), class:"btn btn-warning btn-lg active btn-sm " %></td>
+          <td><%= link_to 'Eliminar', student, method: :delete, data: { confirm: '¿Está seguro?' },class:"btn btn-danger btn-lg active btn-sm " %></td>
            <%end%>
         </tr>
       <% end %>
@@ -63,5 +63,5 @@
     <strong>Para acceder a esta información debe iniciar seción</strong>
   </p>
 
-    <%= link_to 'Atrás', parents_path %>
+    <%= link_to 'Atrás', parents_path,class:"btn btn-default btn-sm  btn-lg active" %>
     <%end%>

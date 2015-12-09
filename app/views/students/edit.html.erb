@@ -2,11 +2,11 @@
 <%if user_signed_in?%>
 <h1>Editar alumnos</h1>
 <%= render 'form' %>
-<%= link_to 'Mostrar', @student %> |
-<%= link_to 'Atrás', students_path %>
+<%= link_to 'Mostrar', @student,class:"btn btn-default btn-lg active btn-sm " %>
+<%= link_to 'Atrás', students_path ,class:"btn btn-default btn-lg active btn-sm "%>
 <%else%>
 <p>
   <strong>Para acceder a esta información debe iniciar seción</strong>
 </p>
-  <%= link_to 'Atrás', students_path %>
+  <%= link_to 'Atrás', students_path,class:"btn btn-default btn-lg active btn-sm " %>
   <%end%>

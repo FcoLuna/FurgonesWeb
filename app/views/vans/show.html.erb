@@ -11,23 +11,12 @@
   <strong>Capacidad:</strong>
   <%= @van.capacidad %>
 </p>
-
-<p>
-  <strong>Estado:</strong>
-  <%= @van.estado %>
-</p>
-
-<p>
-  <strong>Kilometraje:</strong>
-  <%= @van.kilimetrage %>
-</p>
-
-<%= link_to 'Editar', edit_van_path(@van) %> |
-<%= link_to 'Atrás', vans_path %>
+<%= link_to 'Editar', edit_van_path(@van),class:"btn btn-default btn-lg active btn-sm " %>
+<%= link_to 'Atrás', vans_path ,class:"btn btn-default btn-lg active btn-sm "%>
 <%else%>
 <p>
   <strong>Para acceder a esta información debe iniciar seción</strong>
 </p>
 
-  <%= link_to 'Atrás', vans_path %>
+  <%= link_to 'Atrás', vans_path ,class:"btn btn-default btn-lg active btn-sm "%>
   <%end%>

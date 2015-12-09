@@ -2,12 +2,12 @@
   <%if user_signed_in?%>
 <h1>Editando Furón</h1>
 <%= render 'form' %>
-<%= link_to 'Mostrar', @van %> |
-<%= link_to 'Atrás', vans_path %>
+<%= link_to 'Mostrar', @van,class:"btn btn-default btn-lg active btn-sm " %> 
+<%= link_to 'Atrás', vans_path,class:"btn btn-default btn-lg active btn-sm " %>
 <%else%>
 <p>
   <strong>Para acceder a esta información debe iniciar seción</strong>
 </p>
 
-  <%= link_to 'Atrás', vans_path %>
+  <%= link_to 'Atrás', vans_path,class:"btn btn-default btn-lg active btn-sm " %>
   <%end%>

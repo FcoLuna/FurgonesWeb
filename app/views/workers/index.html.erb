@@ -26,17 +26,17 @@
         <td><%= worker.tipo_trabajador %></td>
         <td><%= worker.sueldo %></td>
         <td><%= worker.van ? worker.van.patente : 'Asigne Furgón' %></td>
-        <td><%= link_to 'Mostrar', worker %></td>
-        <td><%= link_to 'Editar', edit_worker_path(worker) %></td>
-        <td><%= link_to 'Eliminar', worker, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+        <td><%= link_to 'Mostrar', worker ,class:"btn btn-primary btn-lg active btn-sm "%></td>
+        <td><%= link_to 'Editar', edit_worker_path(worker), class:"btn btn-warning btn-lg active btn-sm " %></td>
+        <td><%= link_to 'Eliminar', worker, method: :delete, data: { confirm: '¿Está seguro?' },class:"btn btn-danger btn-lg active btn-sm " %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
 <body>
-<%= link_to 'Nuevo Trabajador', new_worker_path %>
-<%= link_to 'Atrás','welcome/index'%>
+<%= link_to 'Nuevo Trabajador', new_worker_path ,class:"btn btn-default btn-lg active btn-sm "%>
+<%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm "%>
 </body>
 <%else%>
 <div class="panel panel-primary">
@@ -66,6 +66,6 @@
 </table>
 </div>
 <body>
-<%= link_to 'Atrás','welcome/index'%>
+<%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm "%>
 </body>
 <%end%>

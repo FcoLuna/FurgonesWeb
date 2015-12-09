@@ -9,8 +9,6 @@
     <tr>
       <th>Patente</th>
       <th>Capacidad</th>
-      <th>Estado</th>
-      <th>Kilometraje</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,18 +18,16 @@
       <tr>
         <td><%= van.patente %></td>
         <td><%= van.capacidad %></td>
-        <td><%= van.estado %></td>
-        <td><%= van.kilimetrage %></td>
-        <td><%= link_to 'Mostrar', van %></td>
-        <td><%= link_to 'Editar', edit_van_path(van) %></td>
-        <td><%= link_to 'Eliminar', van, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+        <td><%= link_to 'Mostrar', van ,class:"btn btn-primary btn-lg active btn-sm "%></td>
+        <td><%= link_to 'Editar', edit_van_path(van) , class:"btn btn-warning btn-lg active btn-sm "%></td>
+        <td><%= link_to 'Eliminar', van, method: :delete, data: { confirm: '¿Está seguro?' },class:"btn btn-danger btn-lg active btn-sm "  %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
-<%= link_to 'Nuevo Furgon', new_van_path %>
-<%= link_to 'Atrás','welcome/index'%>
+<%= link_to 'Nuevo Furgon', new_van_path,class:"btn btn-default btn-lg active btn-sm " %>
+<%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm "%>
 <%else%>
 <div class="panel panel-primary">
 <table class="table">
@@ -50,5 +46,5 @@
   </tbody>
 </table>
 </div>
-<%= link_to 'Atrás','welcome/index'%>
+<%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm "%>
 <%end%>
