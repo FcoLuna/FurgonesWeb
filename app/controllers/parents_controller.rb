@@ -7,7 +7,6 @@ class ParentsController < ApplicationController
   def index
     @parents = Parent.all
   end
-
   # GET /parents/1
   # GET /parents/1.json
   def show
