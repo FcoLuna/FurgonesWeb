@@ -20,8 +20,8 @@ class Student < ActiveRecord::Base
 
   validates_format_of :comuna, :with => /\A[^0-9`!@#\$%\^&*+_=]+\z/,
                       :message => "Invalida"
-  
-  validates_format_of :direccion, :with => /\A[^0-9`!@#\$%\^&*+_=]+\ \#(\d{1,6})\z/i,
+
+  validates_format_of :direccion, :with => /\A[^0-9`!@#\$%\^&*+_=]+\ \#(\d{2,6})\z/i,
                       :message => "Invalida EJ: Pasaje Ejemplo #1234"
 
 end
