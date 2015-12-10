@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117174335) do
+ActiveRecord::Schema.define(version: 20151210053126) do
 
   create_table "parents", force: :cascade do |t|
     t.string   "nombre",     limit: 255
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20151117174335) do
     t.integer  "van_id",          limit: 4
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "telefono",        limit: 4
   end
 
   add_index "workers", ["van_id"], name: "index_workers_on_van_id", using: :btree
