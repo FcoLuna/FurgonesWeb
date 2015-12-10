@@ -21,4 +21,6 @@ class Parent < ActiveRecord::Base
                             :message => "Debe ser positivo"
   validates_numericality_of :pago,less_than_or_equal_to:100000,
                             :message => "Parece ser muy grande"
+  validates_numericality_of :telefono, greater_than_or_equal_to: 0,
+                            :message => "no valido"
 end

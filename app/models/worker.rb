@@ -24,5 +24,6 @@ class Worker < ActiveRecord::Base
   validates_numericality_of :sueldo,less_than_or_equal_to:999999999,
                            :message => "Parece ser muy grande"
   validates :telefono, length: { in:7..8 , message: ": ingrese un número correcto ejemplo 12345678"}
-
+  validates_numericality_of :telefono, greater_than_or_equal_to: 0,
+                            :message => "no valido"
 end

@@ -46,7 +46,7 @@
     <tbody>
       <% Student.all.each do |student| %>
         <tr>
-          <%if @parent.rut==student.parent.rut%>
+          <%if @parent.id==student.parent_id%>
           <td><%= student.nombre %></td>
           <td><%= student.apellido %></td>
           <td><%= link_to 'Mostrar', student,class:"btn btn-primary btn-lg active btn-sm "  %></td>

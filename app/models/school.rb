@@ -13,4 +13,6 @@ class School < ActiveRecord::Base
 
   validates_format_of :nombre, :with => /\A[^0-9`!@#\$%\^&*+_=]+\z/,
                       :message => "Invalido"
+  validates_numericality_of :telefono, greater_than_or_equal_to: 0,
+                            :message => "no valido"
 end
