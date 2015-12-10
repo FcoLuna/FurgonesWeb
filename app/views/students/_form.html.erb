@@ -55,6 +55,5 @@
     <%= collection_select( :student, :van_id, Van.all, :id, :patente, {}, { :multiple => false } ) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit 'Guardar',class:"btn btn-success btn-sm  btn-lg active"%>  </div>
 <% end %>

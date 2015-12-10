@@ -1,7 +1,6 @@
   <%=render "partials/navigation"%>
   <%if user_signed_in?%>
-<p id="notice"><%= notice %></p>
-
+<div class="panel panel-primary">
 <p>
   <strong>Patente:</strong>
   <%= @van.patente %>
@@ -11,9 +10,64 @@
   <strong>Capacidad:</strong>
   <%= @van.capacidad %>
 </p>
-<%= link_to 'Editar', edit_van_path(@van),class:"btn btn-default btn-lg active btn-sm " %>
-<%= link_to 'Atrás', vans_path ,class:"btn btn-default btn-lg active btn-sm "%>
+<p>
+<%= link_to 'Editar', edit_van_path(@van),class:"btn btn-info btn-lg active btn-sm " %>
+<%= link_to 'Atrás', vans_path ,class:"btn btn-info btn-lg active btn-sm "%>
+</p>
+<p>
+    <strong>Trabajadores asignados a este Furgón: </strong>
+</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Jornada</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Worker.all.each do |worker| %>
+        <tr>
+          <%if @van.id==worker.van_id%>
+          <td><%= worker.nombre %></td>
+          <td><%= worker.apellido %></td>
+          <td><%= worker.jornada %></td>
+          <td><%= link_to 'Mostrar', worker,class:"btn btn-primary btn-lg active btn-sm "  %></td>
+          <td><%= link_to 'Editar', edit_worker_path(worker), class:"btn btn-warning btn-lg active btn-sm " %></td>
+          <td><%= link_to 'Eliminar', worker, method: :delete, data: { confirm: '¿Está seguro?' },class:"btn btn-danger btn-lg active btn-sm " %></td>
+           <%end%>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <p>
+    <strong>Alumnos transportado por este Furgón</strong>
+  </p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Student.all.each do |student| %>
+          <tr>
+            <%if @van.id==student.van_id%>
+            <td><%= student.nombre %></td>
+            <td><%= student.apellido %></td>
+            <td><%= link_to 'Mostrar', student,class:"btn btn-primary btn-lg active btn-sm "  %></td>
+            <td><%= link_to 'Editar', edit_student_path(student), class:"btn btn-warning btn-lg active btn-sm " %></td>
+            <td><%= link_to 'Eliminar', student, method: :delete, data: { confirm: '¿Está seguro?' },class:"btn btn-danger btn-lg active btn-sm " %></td>
+             <%end%>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
+</div>
 <%else%>
 <p>
   <strong>Para acceder a esta información debe iniciar seción</strong>
