@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mes:</strong>
+  <%= @pay.mes %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @pay.created_at.strftime "%d-%m-%Y" %>
+</p>
+
+<p>
+  <strong>Apoderado:</strong>
+  <%= @pay.parent.nombre %>
+</p>
+
+<p>
+  <strong>Monto:</strong>
+  <%= @pay.monto %>
+</p>
+
+<%= link_to 'Edit', edit_pay_path(@pay) %> |
+<%= link_to 'Back', pays_path %>

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :pays
   resources :students
   resources :workers
   resources :vans
   resources :schools
   resources :parents do
+  resources :pays
   resources :sudents
   end
 

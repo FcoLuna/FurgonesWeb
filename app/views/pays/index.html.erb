@@ -1,0 +1,38 @@
+<%=render "partials/navigation"%>
+<p id="notice"><%= notice %></p>
+<h1>Lista de Pagos</h1>
+<%if user_signed_in?%>
+<div class="panel panel-primary">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Apoderado</th>
+      <th>Mes pagado</th>
+      <th>Fecha de Pago</th>
+      <th>Monto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pays.each do |pay| %>
+      <tr>
+        <td><%= pay.parent.nombre %></td>
+        <td><%= pay.mes %></td>
+        <td><%= pay.created_at.strftime "%d-%m-%Y" %></td>
+        <td><%= pay.monto %></td>
+        <td><%= link_to 'Show', pay ,class:"btn btn-primary btn-lg active btn-sm "%></td>
+        <td><%= link_to 'Edit', edit_pay_path(pay), class:"btn btn-warning btn-lg active btn-sm " %></td>
+        <td><%= link_to 'Destroy', pay, method: :delete, data: { confirm: '¿Està seguro de eliminar el pago?' },class:"btn btn-danger btn-lg active btn-sm " %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</table>
+</div>
+<body>
+<%= link_to 'Agregar Pago', new_pay_path,class:"btn btn-default btn-lg active btn-sm " %>
+<%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm "%>
+</body>
+<%else%>
+<%end%>

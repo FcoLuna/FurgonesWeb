@@ -1,5 +1,6 @@
 class Parent < ActiveRecord::Base
   has_many :students, dependent: :destroy
+  has_many :pays, dependent: :destroy
   validates :nombre, presence: true, length:{in:3..20,
   			too_short:"demasiado corto",
   			too_long:"demasiado largo"}

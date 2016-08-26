@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mes: MyString
+  fecha: 2016-06-20
+  apoderado_id: 1
+  monto: 1
+
+two:
+  mes: MyString
+  fecha: 2016-06-20
+  apoderado_id: 1
+  monto: 1
