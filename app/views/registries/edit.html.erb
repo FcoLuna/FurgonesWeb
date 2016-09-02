@@ -1,11 +1,11 @@
 <%=render "partials/navigation"%>
   <%if user_signed_in?%>
-<h1>Editar Pagos</h1>
+<h1>Editar Registro</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Mostrar', @pay,class:"btn btn-default btn-sm  btn-lg active" %>
-<%= link_to 'Atràs', pays_path,class:"btn btn-default btn-sm  btn-lg active" %>
+<%= link_to 'Mostrar', @registry,class:"btn btn-default btn-sm  btn-lg active" %> 
+<%= link_to 'Atras', registries_path,class:"btn btn-default btn-sm  btn-lg active" %>
 <%else%>
 <p>
   <strong>Para acceder a esta información debe iniciar seción</strong>

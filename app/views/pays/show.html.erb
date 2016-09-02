@@ -1,5 +1,7 @@
+<%=render "partials/navigation"%>
+  <%if user_signed_in?%>
 <p id="notice"><%= notice %></p>
-
+<div class="panel panel-primary">
 <p>
   <strong>Mes:</strong>
   <%= @pay.mes %>
@@ -20,5 +22,13 @@
   <%= @pay.monto %>
 </p>
 
-<%= link_to 'Edit', edit_pay_path(@pay) %> |
-<%= link_to 'Back', pays_path %>
+<%= link_to 'Editar', edit_pay_path(@pay),class:"btn btn-info btn-sm  btn-lg active"  %>
+<%= link_to 'Atras', pays_path,class:"btn btn-info btn-sm  btn-lg active"  %>
+</div>
+<%else%>
+<p>
+  <strong>Para acceder a esta información debe iniciar seción</strong>
+</p>
+
+  <%= link_to 'Atrás', pays_path,class:"btn btn-default btn-sm  btn-lg active" %>
+  <%end%>

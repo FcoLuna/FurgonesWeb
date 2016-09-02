@@ -1,0 +1,41 @@
+<%=render "partials/navigation"%>
+<%if user_signed_in?%>
+<p id="notice"><%= notice %></p>
+<h1>Listado de Registros</h1>
+<div class="panel panel-primary">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha</th>
+      <th>Van</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registries.each do |registry| %>
+      <tr>
+        <td><%= registry.nombre %></td>
+        <td><%= registry.created_at.strftime "%d-%m-%Y" %></td>
+        <td><%= registry.van.patente  %></td>
+        <td><%= link_to 'Mostrar', registry ,class:"btn btn-primary btn-lg active btn-sm "%></td>
+        <td><%= link_to 'Editar', edit_registry_path(registry), class:"btn btn-warning btn-lg active btn-sm "  %></td>
+        <td><%= link_to 'Eliminar', registry, method: :delete, data: { confirm: 'Esta seguro que lo decea eliminar?' },class:"btn btn-danger btn-lg active btn-sm " %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+<body>
+<%= link_to 'Nuevo Registro', new_registry_path,class:"btn btn-default btn-lg active btn-sm " %>
+<%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm "%>
+</body>
+<%else%>
+<p>
+  <strong>Para acceder a esta información debe iniciar seción</strong>
+</p>
+
+  <%= link_to 'Atrás', pays_path,class:"btn btn-default btn-sm  btn-lg active" %>
+  <%end%>

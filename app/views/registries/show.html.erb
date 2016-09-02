@@ -1,0 +1,33 @@
+<%=render "partials/navigation"%>
+    <%if user_signed_in?%>
+<p id="notice"><%= notice %></p>
+<div class="panel panel-primary">
+<p>
+  <strong>Nombre:</strong>
+  <%= @registry.nombre %>
+</p>
+
+<p>
+  <strong>Mensaje:</strong>
+  <%= @registry.mensaje %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @registry.created_at.strftime "%d-%m-%Y" %>
+</p>
+
+<p>
+  <strong>Van:</strong>
+  <%= @registry.van.patente %>
+</p>
+
+<%= link_to 'Edit', edit_registry_path(@registry),class:"btn btn-info btn-sm  btn-lg active"  %>
+<%= link_to 'Back', registries_path,class:"btn btn-info btn-sm  btn-lg active"  %>
+<%else%>
+<p>
+  <strong>Para acceder a esta información debe iniciar seción</strong>
+</p>
+
+  <%= link_to 'Atrás', registries_path,class:"btn btn-default btn-sm  btn-lg active" %>
+  <%end%>

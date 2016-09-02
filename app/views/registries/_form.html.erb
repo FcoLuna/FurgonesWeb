@@ -1,0 +1,33 @@
+<%= form_for(@registry) do |f| %>
+  <% if @registry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registry.errors.count, "error") %> prohibited this registry from being saved:</h2>
+
+      <ul>
+      <% @registry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mensaje %><br>
+    <%= f.text_area :mensaje %>
+  </div>
+
+  <%= f.label :van_id, "Furgon", class: 'control-label' %>
+  <div class="controls">
+    <%= collection_select( :registry, :van_id, Van.all, :id, :patente, {}, { :multiple => false } ) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

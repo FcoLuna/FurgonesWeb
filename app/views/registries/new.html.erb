@@ -1,0 +1,14 @@
+<%=render "partials/navigation"%>
+<%if user_signed_in?%>
+<h1>Generar Registro</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Atras', registries_path,class:"btn btn-default btn-sm  btn-lg active" %>
+<%else%>
+<p>
+  <strong>Para acceder a esta información debe iniciar seción</strong>
+</p>
+
+  <%= link_to 'Atrás', registries_path,class:"btn btn-default btn-sm  btn-lg active" %>
+  <%end%>

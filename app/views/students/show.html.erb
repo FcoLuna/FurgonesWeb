@@ -1,6 +1,6 @@
 <%=render "partials/navigation"%>
 <%if user_signed_in?%>
-
+<div class="panel panel-primary">
 <p>
   <strong>Nombre:</strong>
   <%= @student.nombre %>
@@ -33,20 +33,21 @@
 
 <p>
   <strong>Apoderado:</strong>
-  <%= @student.parent.nombre %>
+  <%= @student.parent.nombre%> <%=@student.parent.apellido%>
 </p>
 
 <p>
   <strong>Colegio:</strong>
+<%= @student.school ? @student.school.nombre : 'Asigne Colegio'%>
 </p>
-  <%= @student.school ? @student.school.nombre : 'Asigne Colegio'%>
 <p>
   <strong>Furgón:</strong>
   <%= @student.van ? @student.van.patente : 'Asigne Furgón'%>
 </p>
 
-<%= link_to 'Editar', edit_student_path(@student),class:"btn btn-default btn-lg active btn-sm " %>
-<%= link_to 'ir a la lista de Alumnos', students_path ,class:"btn btn-default btn-lg active btn-sm "%>
+<%= link_to 'Editar', edit_student_path(@student),class:"btn btn-info btn-sm  btn-lg active"  %>
+<%= link_to 'ir a la lista de Alumnos', students_path ,class:"btn btn-info btn-sm  btn-lg active"%>
+</div>
 <%else%>
 <p>
   <strong>Para acceder a esta información debe iniciar seción</strong>

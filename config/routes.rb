@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :registries
   get 'search/create'
 
   resources :pays

@@ -1,6 +1,7 @@
 class Van < ActiveRecord::Base
 	has_many :workers, dependent: :nullify
 	has_many :students, dependent: :nullify
+	has_many :registries, dependent: :destroy
 
 	validates :capacidad, presence: true
   validates :patente, presence: true

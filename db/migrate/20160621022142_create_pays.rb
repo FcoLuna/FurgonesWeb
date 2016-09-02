@@ -5,7 +5,6 @@ class CreatePays < ActiveRecord::Migration
       t.date :fecha
       t.references :parent, index: true, foreign_key: true
       t.integer :monto
-
       t.timestamps null: false
     end
   end
