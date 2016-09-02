@@ -21,6 +21,9 @@ class Worker < ActiveRecord::Base
   validates :rut, uniqueness: {case_sensitive: false ,message: "ya existe"}
   validates_numericality_of :sueldo, greater_than_or_equal_to: 0,
                             :message => "Debe ser positivo"
- 
-
+  validates_numericality_of :sueldo,less_than_or_equal_to:999999999,
+                           :message => "Parece ser muy grande"
+  validates :telefono, length: { in:7..8 , message: ": ingrese un número correcto ejemplo 12345678"}
+  validates_numericality_of :telefono, greater_than_or_equal_to: 0,
+                            :message => "no valido"
 end

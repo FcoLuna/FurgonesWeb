@@ -2,8 +2,33 @@
 .no-float{
 	float:none;
 }
-
 .centrado{
     margin-left: auto;
     margin-right: auto;
+}
+
+.carousel{
+    position:relative;
+    background: white;
+    margin-top: 20px;
+    max-height: 400px;
+		max-width: 600px;
+    margin: 0 auto;
+
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+}
+
+figure {display: table;}
+.carousel, figcaption {display: table-cell; vertical-align: middle; float: right; margin-left: 100px;;
+}
+
+.footer{
+	width: anchopx;
+	height: altopx;
+	position: fixed; /* Fija el contenedor a una posición */
+	bottom: 0px; /* El div se sitúa abajo */
+	z-index: -88; /* Lo muestra por encima de otros div */
+	background: black;
 }

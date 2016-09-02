@@ -10,7 +10,6 @@ class CreateStudents < ActiveRecord::Migration
       t.references :parent, index: true, foreign_key: true
       t.references :school, index: true, foreign_key: true
       t.references :van, index: true, foreign_key: true
-
       t.timestamps null: false
     end
   end

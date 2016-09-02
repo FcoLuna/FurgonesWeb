@@ -24,6 +24,7 @@
     <div class="controls">
       <%= f.select(:estado, options_for_select([['Exelente', 'Exelente'], ['Bueno', 'Bueno'],['Regular', 'Regular'],['Malo','Malo'], ['Pesimo', 'Pesimo']]), { prompt: 'Seleccione Estado del Vehiculo' }) %>
 </div>
+</div>
 <div class="field">
   <%= f.label :kilimetrage, "Kilometrage" %><br>
   <%= f.number_field :kilimetrage %>

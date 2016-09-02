@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160621022142) do
     t.integer  "van_id",          limit: 4
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "telefono",        limit: 4
   end
 
   add_index "workers", ["van_id"], name: "index_workers_on_van_id", using: :btree

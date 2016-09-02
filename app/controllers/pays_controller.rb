@@ -28,7 +28,7 @@ class PaysController < ApplicationController
 
     respond_to do |format|
       if @pay.save
-        format.html { redirect_to @pay, notice: 'Pay was successfully created.' }
+        format.html { redirect_to @pay, notice: 'Pago incluido con Exito!.' }
         format.json { render :show, status: :created, location: @pay }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PaysController < ApplicationController
   def update
     respond_to do |format|
       if @pay.update(pay_params)
-        format.html { redirect_to @pay, notice: 'Pay was successfully updated.' }
+        format.html { redirect_to @pay, notice: 'Pago editado.' }
         format.json { render :show, status: :ok, location: @pay }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PaysController < ApplicationController
   def destroy
     @pay.destroy
     respond_to do |format|
-      format.html { redirect_to pays_url, notice: 'Pay was successfully destroyed.' }
+      format.html { redirect_to pays_url, notice: 'El pago a sido eliminado.' }
       format.json { head :no_content }
     end
   end

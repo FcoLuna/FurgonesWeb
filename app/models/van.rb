@@ -10,7 +10,7 @@ class Van < ActiveRecord::Base
   validates_numericality_of :capacidad,less_than_or_equal_to:30,
                             :message => "Parece ser muy grande"
   validates_format_of :patente,
-                      :with => /\A[a-z]{2}[\.\- ]?[0-9]{2}[\.\- ]?[0-9]{2}|[b-d,f-h,j-l,p,r-t,v-z]{2}[\-\. ]?[b-d,f-h,j-l,p,r-t,v-z]{2}[\.\- ]?[0-9]{2}\Z/i,
+                      :with => /\A[A-Z]{2}[-][0-9]{2}[-][0-9]{2}|[B-D,F-H,J-L,P,R-T,V-Z]{2}[-][B-D,F-H,J-L,P,R-T,V-Z]{2}[-][0-9]{2}\Z/,
                       :message => "Formato no Valido"
 
 end

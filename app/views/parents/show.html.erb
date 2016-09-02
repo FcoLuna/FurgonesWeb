@@ -46,7 +46,7 @@
     <tbody>
       <% Student.all.each do |student| %>
         <tr>
-          <%if @parent.rut==student.parent.rut%>
+          <%if @parent.id==student.parent_id%>
           <td><%= student.nombre %></td>
           <td><%= student.apellido %></td>
           <td><%= link_to 'Mostrar', student,class:"btn btn-primary btn-lg active btn-sm "  %></td>
@@ -57,6 +57,36 @@
       <% end %>
     </tbody>
   </table>
+
+  <p>
+    <strong>Pagos realizados por este Apoderado</strong>
+  </p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Mes pagado</th>
+          <th>Fecha de Pago</th>
+          <th>Monto</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Pay.all.each do |pay| %>
+        <tr>
+           <%if @parent.id==pay.parent_id%>
+           <td><%= pay.mes %></td>
+           <td><%= pay.created_at.strftime "%d-%m-%Y" %></td>
+           <td><%= pay.monto %></td>
+           <td><%= link_to 'Mostrar', pay ,class:"btn btn-primary btn-lg active btn-sm "%></td>
+           <td><%= link_to 'Editar', edit_pay_path(pay), class:"btn btn-warning btn-lg active btn-sm " %></td>
+           <td><%= link_to 'Eliminar', pay, method: :delete, data: { confirm: '¿Està seguro de eliminar el pago?' },class:"btn btn-danger btn-lg active btn-sm " %></td
+             <%end%>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
   </div>
   <%else%>
   <p>

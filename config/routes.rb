@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/create'
+
   resources :pays
   resources :students
   resources :workers

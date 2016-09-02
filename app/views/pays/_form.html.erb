@@ -10,12 +10,12 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :mes %><br>
-    <%= f.text_field :mes %>
-  </div>
-
+  <div class="control-group">
+    <%= f.label "Mes", class: 'control-label' %>
+    <div class="controls">
+      <%= f.select(:mes, options_for_select([['Marzo', 'Marzo'], ['Abril', 'Abril'],['Mayo', 'Mayo'],['Junio','Junio'], ['Julio', 'Julio'], ['Agosto', 'Agosto'], ['Septiembre', 'Septiembre'], ['Octubre', 'Octubre'], ['Noviembre', 'Noviembre'], ['Diciembre', 'Diciembre']]), { prompt: 'Seleccione un mes' }) %>
+</div>
+    <%= f.label :"Apoderado" %><br>
   <div class="controls">
      <%= collection_select( :pay, :parent_id, Parent.all, :id, :nombre, {}, { :multiple => false } ) %>
    </div>
