@@ -25,6 +25,7 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @vans, renderer: BootstrapPagination::Rails %>
 </div>
 <%= link_to 'Nuevo Furgon', new_van_path,class:"btn btn-default btn-lg active btn-sm " %>
 <%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm "%>
@@ -45,6 +46,7 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @vans, renderer: BootstrapPagination::Rails %>
 </div>
 <%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm "%>
 <%end%>

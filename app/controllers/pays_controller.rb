@@ -4,7 +4,7 @@ class PaysController < ApplicationController
   # GET /pays
   # GET /pays.json
   def index
-    @pays = Pay.all
+    @pays = Pay.paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /pays/1

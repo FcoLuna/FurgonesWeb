@@ -36,18 +36,19 @@
   </tbody>
 </table>
 </table>
+<%= will_paginate @pays, renderer: BootstrapPagination::Rails %>
 </div>
 <body>
 <%= link_to 'Agregar Pago', new_pay_path,class:"btn btn-default btn-lg active btn-sm " %>
 <%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm "%>
 </body>
 <%else%>
-<div id="resultados">
-</div>
 <%= form_tag "/search/create", method: :get, remote: true, id: "search-form" do %>
 <%= text_field_tag :keyword, nil, placeholder: "Ingrese rut del apoderado"%>
 <%= content_tag :button, type: :submit do%>
 Buscar
 <%end%>
+<div id="resultados">
+</div>
 <%end%>
 <%end%>

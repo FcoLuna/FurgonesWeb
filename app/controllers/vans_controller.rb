@@ -5,7 +5,7 @@ class VansController < ApplicationController
   # GET /vans
   # GET /vans.json
   def index
-    @vans = Van.all
+    @vans = Van.paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /vans/1

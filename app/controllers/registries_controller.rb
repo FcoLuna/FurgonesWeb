@@ -4,7 +4,7 @@ class RegistriesController < ApplicationController
   # GET /registries
   # GET /registries.json
   def index
-    @registries = Registry.all
+    @registries = Registry.paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /registries/1

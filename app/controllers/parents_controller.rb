@@ -5,7 +5,7 @@ class ParentsController < ApplicationController
   # GET /parents
   # GET /parents.json
   def index
-    @parents = Parent.all
+  @parents = Parent.paginate(:page => params[:page], :per_page => 10)
   end
   # GET /parents/1
   # GET /parents/1.json

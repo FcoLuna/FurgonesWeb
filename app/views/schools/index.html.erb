@@ -28,6 +28,7 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @schools, renderer: BootstrapPagination::Rails %>
 </div>
 
 <%= link_to 'Nuevo Colegio', new_school_path,class:"btn btn-default btn-lg active btn-sm"  %>
@@ -56,6 +57,7 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @schools, renderer: BootstrapPagination::Rails %>
 </div>
 <%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm"%>
 <%end%>

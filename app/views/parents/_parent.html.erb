@@ -13,6 +13,7 @@
       </tr>
     </thead>
       <tbody>
+          <%if user_signed_in?%>
   <tr>
            <% Pay.all.each do |pay| %>
               <%if parent.id==pay.parent_id%>
@@ -25,6 +26,16 @@
                <%end%>
             </tr>
           <% end %>
+          <%else%>
+          <% Pay.all.each do |pay| %>
+             <%if parent.id==pay.parent_id%>
+             <td><%= pay.mes %></td>
+             <td><%= pay.created_at.strftime "%d-%m-%Y" %></td>
+             <td><%= pay.monto %></td>
+            <%end%>
+           </tr>
+        <% end %>
+         <% end %>
         </tbody>
       </thead>
       </table>
