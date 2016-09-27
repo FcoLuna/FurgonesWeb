@@ -34,12 +34,14 @@
   </thead>
 <tbody>
 <% Salary.all.each do |t| %>
+<% if (mes=='08')%>
 <tr>
 <td><%= t.worker.nombre %></td>
 <td><%= t.worker.apellido %></td>
 <td><%= t.monto %></td>
 <%suma = suma - t.monto%>
 </tr>
+<%end%>
 <%end%>
 </tbody>
 </table>
@@ -53,12 +55,14 @@
   </thead>
 <tbody>
 <% Speding.all.each do |t| %>
+<% if (mes=='08')%>
 <tr>
 <td><%= t.nombre %></td>
 <td><%= t.van.patente %></td>
 <td><%= t.monto %></td>
 <%suma = suma - t.monto%>
 </tr>
+<%end%>
 <%end%>
 </tbody>
 </table>
