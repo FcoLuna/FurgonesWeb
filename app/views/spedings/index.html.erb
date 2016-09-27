@@ -1,0 +1,45 @@
+<%=render "partials/navigation"%>
+<p id="notice"><%= notice %></p>
+<h1>Listado  de Gastos</h1>
+<%if user_signed_in?%>
+
+<div class="panel panel-primary">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Motivo</th>
+      <th>Mes</th>
+      <th>Monto</th>
+      <th>Furgon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @spendings.each do |spending| %>
+      <tr>
+        <td><%= spending.nombre %></td>
+        <td><%= spending.mes %></td>
+        <td><%= spending.monto %></td>
+        <td><%= spending.van_id.patente %></td>
+        <td><%= link_to 'Mostrar', spending <td><%= link_to 'Mostrar', pay ,class:"btn btn-primary btn-lg active btn-sm "%></td>
+        <td><%= link_to 'Editar', edit_spending_path(spending), class:"btn btn-warning btn-lg active btn-sm " %></td
+        <td><%= link_to 'Destruir', spending, method: :delete, data: { confirm: '¿Està seguro de eliminar el gasto?' },class:"btn btn-danger btn-lg active btn-sm " %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</table>
+<%= will_paginate @pays, renderer: BootstrapPagination::Rails %>
+</div>
+<body>
+  <%= link_to 'Agregar Gasto', new_speding_path class:"btn btn-default btn-lg active btn-sm " %>
+  <%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm" %>
+  </body>
+  <%else%>
+  <p>
+    <strong>Para acceder a esta información debe iniciar seción</strong>
+  </p>
+  <%= link_to 'Atrás', spedings_path,class:"btn btn-default btn-sm  btn-lg active" %>
+
+  <%end%>

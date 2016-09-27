@@ -1,0 +1,13 @@
+<%if user_signed_in?%>
+<h1>Editar Sueldos</h1>
+<%= render 'form' %>
+
+<%= link_to 'Show', @salary,class:"btn btn-default btn-sm  btn-lg active" %>
+<%= link_to 'Back', salaries_path,class:"btn btn-default btn-sm  btn-lg active" %>
+<%else%>
+<p>
+<strong>Para acceder a esta información debe iniciar seción</strong>
+</p>
+
+<%= link_to 'Atrás', pays_path,class:"btn btn-default btn-sm  btn-lg active" %>
+<%end%>

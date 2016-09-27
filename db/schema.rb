@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902031242) do
+ActiveRecord::Schema.define(version: 20160927002954) do
 
   create_table "parents", force: :cascade do |t|
     t.string   "nombre",     limit: 255
@@ -45,6 +45,11 @@ ActiveRecord::Schema.define(version: 20160902031242) do
 
   add_index "registries", ["van_id"], name: "index_registries_on_van_id", using: :btree
 
+  create_table "salaries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "schools", force: :cascade do |t|
     t.string   "nombre",     limit: 255
     t.integer  "telefono",   limit: 4
@@ -52,6 +57,11 @@ ActiveRecord::Schema.define(version: 20160902031242) do
     t.string   "comuna",     limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "spedings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "students", force: :cascade do |t|

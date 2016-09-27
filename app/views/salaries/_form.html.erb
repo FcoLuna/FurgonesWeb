@@ -1,0 +1,29 @@
+<%= form_for(@salary) do |f| %>
+  <% if @salary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@salary.errors.count, "error") %> prohibited this salary from being saved:</h2>
+
+      <ul>
+      <% @salary.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label "Mes", class: 'control-label' %>
+    <div class="controls">
+      <%= f.select(:mes, options_for_select([['Marzo', 'Marzo'], ['Abril', 'Abril'],['Mayo', 'Mayo'],['Junio','Junio'], ['Julio', 'Julio'], ['Agosto', 'Agosto'], ['Septiembre', 'Septiembre'], ['Octubre', 'Octubre'], ['Noviembre', 'Noviembre'], ['Diciembre', 'Diciembre']]), { prompt: 'Seleccione un mes' }) %>
+</div>
+    <%= f.label :"Trabajador" %><br>
+  <div class="controls">
+     <%= collection_select( :salary, :worker_id, Worker.all, :id, :nombre {}, { :multiple => false } ) %>
+   </div>
+  <div class="field">
+    <%= f.label :monto %><br>
+    <%= f.number_field :monto %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

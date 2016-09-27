@@ -1,0 +1,30 @@
+<%=render "partials/navigation"%>
+<%if user_signed_in?%>
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Motivo:</strong>
+  <%= @speding.nombre %>
+</p>
+<p>
+  <strong>Fecha:</strong>
+  <%= @speding.created_at.strftime "%d-%m-%Y" %>
+</p>
+<p>
+  <strong>monto:</strong>
+  <%= @speding.monto %>
+</p>
+<p>
+  <strong>Furgon:</strong>
+  <%= @speding.van.patente %>
+</p>
+
+<%= link_to 'Editar', edit_speding_path(@speding),class:"btn btn-info btn-sm  btn-lg active"  %>
+<%= link_to 'Atras', spedings_path,class:"btn btn-info btn-sm  btn-lg active"  %>
+</div>
+<%else%>
+<p>
+  <strong>Para acceder a esta información debe iniciar seción</strong>
+</p>
+
+  <%= link_to 'Atrás', spedings_path,class:"btn btn-default btn-sm  btn-lg active" %>
+  <%end%>

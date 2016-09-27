@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :spedings
+  resources :salaries
   resources :registries
   get 'search/create'
 

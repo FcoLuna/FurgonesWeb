@@ -1,0 +1,42 @@
+<%if user_signed_in?%>
+<p id="notice"><%= notice %></p>
+<h1>Lista de Sueldos pagados</h1>
+
+<div class="panel panel-primary">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Trabajador</th>
+      <th>Mes pagado</th>
+      <th>Fecha de Pago</th>
+      <th>Monto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @salaries.each do |salary| %>
+      <tr>
+        <td><%= salary.worker.nombre %></td>
+        <td><%= salary.mes %></td>
+        <td><%= salary.created_at.strftime "%d-%m-%Y" %></td>
+        <td><%= salary.monto %></td>
+        <td><%= link_to 'Mostrar', salary,class:"btn btn-primary btn-lg active btn-sm "%></td>ar
+        <td><%= link_to 'Editar', edit_salary_path(salary), class:"btn btn-warning btn-lg active btn-sm " %></td>
+        <td><%= link_to 'Eliminar', salary, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger btn-lg active btn-sm " %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @pays, renderer: BootstrapPagination::Rails %>
+</div>
+<body>
+<%= link_to 'Agregar Sueldo', new_salary_path,class:"btn btn-default btn-lg active btn-sm " %>
+<%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm "%>
+</body>
+<%else%>
+<p>
+  <strong>Para acceder a esta información debe iniciar seción</strong>
+</p>
+  <%= link_to 'Atrás', pays_path,class:"btn btn-default btn-sm  btn-lg active" %>
+  <%end%>
