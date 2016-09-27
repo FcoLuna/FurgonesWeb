@@ -1,4 +1,4 @@
-class Spending < ActiveRecord::Base
+class Speding < ActiveRecord::Base
   belongs_to :van
   validates :monto, presence: true
   validates :nombre, presence: true

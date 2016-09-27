@@ -16,15 +16,15 @@
   </thead>
 
   <tbody>
-    <% @spendings.each do |spending| %>
+    <% @spedings.each do |speding| %>
       <tr>
-        <td><%= spending.nombre %></td>
-        <td><%= spending.mes %></td>
-        <td><%= spending.monto %></td>
-        <td><%= spending.van_id.patente %></td>
-        <td><%= link_to 'Mostrar', spending <td><%= link_to 'Mostrar', pay ,class:"btn btn-primary btn-lg active btn-sm "%></td>
-        <td><%= link_to 'Editar', edit_spending_path(spending), class:"btn btn-warning btn-lg active btn-sm " %></td
-        <td><%= link_to 'Destruir', spending, method: :delete, data: { confirm: '¿Està seguro de eliminar el gasto?' },class:"btn btn-danger btn-lg active btn-sm " %></td>
+        <td><%= speding.nombre %></td>
+        <td><%= speding.mes %></td>
+        <td><%= speding.monto %></td>
+        <td><%= speding.van_id.patente %></td>
+        <td><%= link_to 'Mostrar', speding,class:"btn btn-primary btn-lg active btn-sm "%></td>
+        <td><%= link_to 'Editar', edit_speding_path(spending), class:"btn btn-warning btn-lg active btn-sm " %></td
+        <td><%= link_to 'Destruir', speding, method: :delete, data: { confirm: '¿Està seguro de eliminar el gasto?' },class:"btn btn-danger btn-lg active btn-sm " %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,7 +33,7 @@
 <%= will_paginate @pays, renderer: BootstrapPagination::Rails %>
 </div>
 <body>
-  <%= link_to 'Agregar Gasto', new_speding_path class:"btn btn-default btn-lg active btn-sm " %>
+  <%= link_to 'Agregar Gasto', new_speding_path, class:"btn btn-default btn-lg active btn-sm " %>
   <%= link_to 'Atrás','welcome/index',class:"btn btn-default btn-lg active btn-sm" %>
   </body>
   <%else%>
