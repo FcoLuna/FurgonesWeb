@@ -1,36 +1,40 @@
 <%=render "partials/navigation"%>
+<font size=6 COLOR=#190707 face="verdana">Ganancias en el mes de Abril</font>
 <%suma = 0%>
 <%mes=1%>
-<%año1=1%>
+<% año1=1%>
+<% año=1%>
 <%año=Time.now.year%>
-</p>  <div class="panel panel-primary">
+<%Integer(año)%>
+<div class="panel panel-primary">
+  <th><font size=4,font color="black",face="verdana"><%= "Pagos obtenidos: " %></th></font>
   <table class="table">
     <thead>
       <tr>
       <th>Nombre:</th>
       <th>Apellido:</th>
-      <th>Pago:</th>
+        <th>Mes Pagado:</th>
+      <th>Pago:</th
     </tr>
   </thead>
   <tbody>
 <% Pay.all.each do |t| %>
 <%mes=t.created_at.strftime"%m"%>
 <%año1=t.created_at.strftime"%Y"%>
-<%=año%>
-<%=año1%>
-<% if (mes=='08')%>
-<%if (año1.ecuals(año))%>
+<% if (mes=='04' and año1=='2016')%>
   <tr>
   <td><%= t.parent.nombre %></td>
   <td><%= t.parent.apellido %></td>
+<td><%= t.mes %></td>
   <td><%= t.monto %></td>
+
   <%suma = suma + t.monto%>
     </tr>
 <%end%>
 <%end%>
-<%end%>
 </tbody>
 </table>
+  <th><font size=4,font color="black",face="verdana"><%= "Sueldos Pagados: " %></th></font>
 <table class="table">
   <thead>
     <tr>
@@ -42,7 +46,7 @@
 <tbody>
 <% Salary.all.each do |t| %>
 <%mes=t.created_at.strftime"%m"%>
-<% if (mes=='08')%>
+<% if (mes=='04' and año1=='2016')%>
 <tr>
 <td><%= t.worker.nombre %></td>
 <td><%= t.worker.apellido %></td>
@@ -53,6 +57,7 @@
 <%end%>
 </tbody>
 </table>
+  <th><font size=4,font color="black",face="verdana"><%= "Gastos Realizados: " %></th></font>
 <table class="table">
   <thead>
     <tr>
@@ -64,7 +69,7 @@
 <tbody>
 <% Speding.all.each do |t| %>
 <%mes=t.created_at.strftime"%m"%>
-<% if (mes=='08')%>
+<% if (mes=='04' and año1=='2016')%>
 <tr>
 <td><%= t.nombre %></td>
 <td><%= t.van.patente %></td>
@@ -78,7 +83,7 @@
 <table class="table">
 <thead>
   <tr>
-  <th>La ganancia Total, descontando los Sueldos y los gastos es de: $ <%=suma%>, <%=año1%></th>
+  <th><font size=4,font color="black",face="verdana">La ganancia Total, descontando los Sueldos y los gastos es de: $ <%=suma%></font></th>
 </tr>
 </thead>
 </table>

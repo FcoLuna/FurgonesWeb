@@ -19,11 +19,11 @@
 
 <p>
   <strong>Van:</strong>
-  <%= @registry.van.patente %>
+  <%= @registry.van.patente ? @registry.van.patente : 'Asigne Furgon' %>
 </p>
 
-<%= link_to 'Edit', edit_registry_path(@registry),class:"btn btn-info btn-sm  btn-lg active"  %>
-<%= link_to 'Back', registries_path,class:"btn btn-info btn-sm  btn-lg active"  %>
+<%= link_to 'Editar', edit_registry_path(@registry),class:"btn btn-info btn-sm  btn-lg active"  %>
+<%= link_to 'Atras', registries_path,class:"btn btn-info btn-sm  btn-lg active"  %>
 <%else%>
 <p>
   <strong>Para acceder a esta información debe iniciar seción</strong>

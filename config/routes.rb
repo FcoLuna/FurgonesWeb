@@ -17,7 +17,17 @@ Rails.application.routes.draw do
 
 devise_for :users, controllers:{registrations: "registrations"}
  resources :users, only: [:show, :index]
-  get 'manage/gain'
+  get 'manage/marzo'
+  get 'manage/abril'
+  get 'manage/mayo'
+  get 'manage/junio'
+  get 'manage/julio'
+  get 'manage/agosto'
+  get 'manage/septiembre'
+  get 'manage/octubre'
+  get 'manage/noviembre'
+  get 'manage/diciembre'
+
   get 'welcome/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -13,7 +13,7 @@
 </p>
 <p>
   <strong>Apoderado:</strong>
-  <%= @pay.parent.nombre %>
+  <%= @pay.parent.nombre ? @pay.parent.nombre : 'Asigne Apoderado' %>
 </p>
 <p>
   <strong>Monto:</strong>

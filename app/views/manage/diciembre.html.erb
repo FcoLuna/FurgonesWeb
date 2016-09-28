@@ -1,0 +1,92 @@
+<%=render "partials/navigation"%>
+<font size=6 COLOR=#190707 face="verdana">Ganancias en el mes de Diciembre</font>
+<%suma = 0%>
+<%mes=1%>
+<% año1=1%>
+<% año=1%>
+<%año=Time.now.year%>
+<%Integer(año)%>
+<div class="panel panel-primary">
+  <th><font size=4,font color="black",face="verdana"><%= "Pagos obtenidos: " %></th></font>
+  <table class="table">
+    <thead>
+      <tr>
+      <th>Nombre:</th>
+      <th>Apellido:</th>
+        <th>Mes Pagado:</th>
+      <th>Pago:</th
+    </tr>
+  </thead>
+  <tbody>
+<% Pay.all.each do |t| %>
+<%mes=t.created_at.strftime"%m"%>
+<%año1=t.created_at.strftime"%Y"%>
+<% if (mes=='12' and año1=='2016')%>
+  <tr>
+  <td><%= t.parent.nombre %></td>
+  <td><%= t.parent.apellido %></td>
+<td><%= t.mes %></td>
+  <td><%= t.monto %></td>
+  <%suma = suma + t.monto%>
+    </tr>
+<%end%>
+<%end%>
+</tbody>
+</table>
+  <th><font size=4,font color="black",face="verdana"><%= "Sueldos Pagados: " %></th></font>
+<table class="table">
+  <thead>
+    <tr>
+    <th>Nombre:</th>
+    <th>Apellido:</th>
+    <th>Sueldo:</th>
+  </tr>
+  </thead>
+<tbody>
+<% Salary.all.each do |t| %>
+<%mes=t.created_at.strftime"%m"%>
+<% if (mes=='12' and año1=='2016')%>
+<tr>
+<td><%= t.worker.nombre %></td>
+<td><%= t.worker.apellido %></td>
+<td><%= t.monto %></td>
+<%suma = suma - t.monto%>
+</tr>
+<%end%>
+<%end%>
+</tbody>
+</table>
+  <th><font size=4,font color="black",face="verdana"><%= "Gastos Realizados: " %></th></font>
+<table class="table">
+  <thead>
+    <tr>
+    <th>Motivo:</th>
+    <th>Furgon:</th>
+    <th>monto:</th>
+  </tr>
+  </thead>
+<tbody>
+<% Speding.all.each do |t| %>
+<%mes=t.created_at.strftime"%m"%>
+<% if (mes=='12' and año1=='2016')%>
+<tr>
+<td><%= t.nombre %></td>
+<td><%= t.van.patente %></td>
+<td><%= t.monto %></td>
+<%suma = suma - t.monto%>
+</tr>
+<%end%>
+<%end%>
+</tbody>
+</table>
+<table class="table">
+<thead>
+  <tr>
+  <th><font size=4,font color="black",face="verdana">La ganancia Total, descontando los Sueldos y los gastos es de: $ <%=suma%></font></th>
+</tr>
+</thead>
+</table>
+</div>
+<p>
+  <%= link_to 'Atrás',welcome_index_path,class:"btn btn-default btn-lg active btn-sm "%>
+</p>

@@ -13,7 +13,7 @@
 
 <p>
   <strong>Trabajador :</strong>
-  <%= @salary.worker.nombre %>
+  <%= @salary.worker.nombre ? @salary.worker.nombre : 'Asigne Trabajador' %>
 </p>
 <%= link_to 'Editar', edit_salary_path(@salary),class:"btn btn-info btn-sm  btn-lg active"  %>
 <%= link_to 'Atras', salaries_path,class:"btn btn-info btn-sm  btn-lg active"  %>

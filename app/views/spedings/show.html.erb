@@ -16,7 +16,7 @@
 </p>
 <p>
   <strong>Furgon:</strong>
-  <%= @speding.van.patente %>
+  <%= @speding.van.patente ? @speding.van.patente : 'Asigne Furgon' %>
 </p>
 
 <%= link_to 'Editar', edit_speding_path(@speding),class:"btn btn-info btn-sm  btn-lg active"  %>

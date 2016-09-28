@@ -36,6 +36,31 @@
 
 <%= link_to 'Editar', edit_worker_path(@worker) ,class:"btn btn-info btn-sm  btn-lg active" %>
 <%= link_to 'Atrás', workers_path ,class:"btn btn-info btn-sm  btn-lg active" %>
+<p>
+  <strong>Pagos realizados a este trabajador</strong>
+</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Mes pagado</th>
+        <th>Fecha del Pago</th>
+        <th>Monto</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Salary.all.each do |salary| %>
+      <tr>
+         <%if @worker.id==salary.worker_id%>
+         <td><%= salary.mes %></td>
+         <td><%= salary.created_at.strftime "%d-%m-%Y" %></td>
+         <td><%= salary.monto %></td>
+         <td><%= link_to 'Mostrar', salary,class:"btn btn-primary btn-lg active btn-sm "%></td>
+         <td><%= link_to 'Editar', edit_salary_path(salary), class:"btn btn-warning btn-lg active btn-sm " %></td>
+         <td><%= link_to 'Eliminar', salary, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger btn-lg active btn-sm " %></td>           <%end%>
+        </tr>
+      <% end %>
+    </tbody>
 </div>
 <%else%>
 <p>
