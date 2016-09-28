@@ -15,10 +15,9 @@
   <strong>Trabajador :</strong>
   <%= @salary.worker.nombre %>
 </p>
-
-
 <%= link_to 'Editar', edit_salary_path(@salary),class:"btn btn-info btn-sm  btn-lg active"  %>
 <%= link_to 'Atras', salaries_path,class:"btn btn-info btn-sm  btn-lg active"  %>
+<%else%>
 <p>
   <strong>Para acceder a esta información debe iniciar seción</strong>
 </p>

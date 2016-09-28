@@ -8,8 +8,8 @@
   <thead>
     <tr>
       <th>Motivo</th>
-      <th>Mes</th>
       <th>Monto</th>
+      <th>Fecha:</th>
       <th>Furgon</th>
       <th colspan="3"></th>
     </tr>
@@ -19,12 +19,12 @@
     <% @spedings.each do |speding| %>
       <tr>
         <td><%= speding.nombre %></td>
-        <td><%= speding.mes %></td>
         <td><%= speding.monto %></td>
-        <td><%= speding.van_id.patente %></td>
+        <td><%= speding.created_at.strftime "%d-%m-%Y" %></td>
+        <td><%= speding.van.patente %></td>
         <td><%= link_to 'Mostrar', speding,class:"btn btn-primary btn-lg active btn-sm "%></td>
-        <td><%= link_to 'Editar', edit_speding_path(spending), class:"btn btn-warning btn-lg active btn-sm " %></td
-        <td><%= link_to 'Destruir', speding, method: :delete, data: { confirm: '¿Està seguro de eliminar el gasto?' },class:"btn btn-danger btn-lg active btn-sm " %></td>
+        <td><%= link_to 'Editar', edit_speding_path(speding), class:"btn btn-warning btn-lg active btn-sm " %></td>
+          <td><%= link_to 'Eliminar', speding, method: :delete, data: { confirm: '¿Està seguro de eliminar el gasto?' },class:"btn btn-danger btn-lg active btn-sm " %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,4 +42,4 @@
   </p>
   <%= link_to 'Atrás', spedings_path,class:"btn btn-default btn-sm  btn-lg active" %>
 
-  <%end%>
+<%end%>

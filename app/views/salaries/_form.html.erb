@@ -17,7 +17,7 @@
 </div>
     <%= f.label :"Trabajador" %><br>
   <div class="controls">
-     <%= collection_select( :salary, :worker_id, Worker.all, :id, :nombre {}, { :multiple => false } ) %>
+     <%= collection_select( :salary, :worker_id, Worker.all, :id, :nombre, {}, { :multiple => false } ) %>
    </div>
   <div class="field">
     <%= f.label :monto %><br>
@@ -26,4 +26,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
 <% end %>

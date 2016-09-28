@@ -18,7 +18,7 @@ class SpedingsControllerTest < ActionController::TestCase
 
   test "should create speding" do
     assert_difference('Speding.count') do
-      post :create, speding: {  }
+      post :create, speding: { monto: @speding.monto, nombre: @speding.nombre, van_id: @speding.van_id }
     end
 
     assert_redirected_to speding_path(assigns(:speding))
@@ -35,7 +35,7 @@ class SpedingsControllerTest < ActionController::TestCase
   end
 
   test "should update speding" do
-    patch :update, id: @speding, speding: {  }
+    patch :update, id: @speding, speding: { monto: @speding.monto, nombre: @speding.nombre, van_id: @speding.van_id }
     assert_redirected_to speding_path(assigns(:speding))
   end
 

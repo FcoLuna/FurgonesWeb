@@ -18,7 +18,7 @@ class SalariesControllerTest < ActionController::TestCase
 
   test "should create salary" do
     assert_difference('Salary.count') do
-      post :create, salary: {  }
+      post :create, salary: { mes: @salary.mes, monto: @salary.monto, worker_id: @salary.worker_id }
     end
 
     assert_redirected_to salary_path(assigns(:salary))
@@ -35,7 +35,7 @@ class SalariesControllerTest < ActionController::TestCase
   end
 
   test "should update salary" do
-    patch :update, id: @salary, salary: {  }
+    patch :update, id: @salary, salary: { mes: @salary.mes, monto: @salary.monto, worker_id: @salary.worker_id }
     assert_redirected_to salary_path(assigns(:salary))
   end
 

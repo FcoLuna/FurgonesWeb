@@ -1,1 +1,1 @@
-json.extract! @speding, :id, :created_at, :updated_at
+json.extract! @speding, :id, :nombre, :monto, :van_id, :created_at, :updated_at

@@ -1,10 +1,10 @@
-<%= form_for(@spending) do |f| %>
-  <% if @spending.errors.any? %>
+<%= form_for(@speding) do |f| %>
+  <% if @speding.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@spending.errors.count, "error") %> prohibited this spending from being saved:</h2>
+      <h2><%= pluralize(@speding.errors.count, "error") %> prohibited this speding from being saved:</h2>
 
       <ul>
-      <% @spending.errors.full_messages.each do |message| %>
+      <% @speding.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nombre %><br>
+    <%= f.label :"Motivo" %><br>
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
@@ -21,7 +21,7 @@
   </div>
   <%= f.label :"Furgon" %>
   <div class="controls">
-     <%= collection_select( :speding, :speding_id, Van.all, :id, :patente, {}, { :multiple => false } ) %>
+     <%= collection_select( :speding, :van_id, Van.all, :id, :patente, {}, { :multiple => false } ) %>
    </div>
   <div class="actions">
     <%= f.submit %>

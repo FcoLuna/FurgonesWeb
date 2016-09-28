@@ -1,6 +1,7 @@
 <%=render "partials/navigation"%>
 <%if user_signed_in?%>
 <p id="notice"><%= notice %></p>
+<div class="panel panel-primary">
 <p>
   <strong>Motivo:</strong>
   <%= @speding.nombre %>
@@ -27,4 +28,4 @@
 </p>
 
   <%= link_to 'Atrás', spedings_path,class:"btn btn-default btn-sm  btn-lg active" %>
-  <%end%>
+<%end%>

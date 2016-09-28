@@ -28,7 +28,7 @@ class SalariesController < ApplicationController
 
     respond_to do |format|
       if @salary.save
-        format.html { redirect_to @salary, notice: 'Sueldo Registrado con Exito.' }
+        format.html { redirect_to @salary, notice: 'Salary was successfully created.' }
         format.json { render :show, status: :created, location: @salary }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SalariesController < ApplicationController
   def update
     respond_to do |format|
       if @salary.update(salary_params)
-        format.html { redirect_to @salary, notice: 'Sueldo Editado con Exito' }
+        format.html { redirect_to @salary, notice: 'Salary was successfully updated.' }
         format.json { render :show, status: :ok, location: @salary }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class SalariesController < ApplicationController
   def destroy
     @salary.destroy
     respond_to do |format|
-      format.html { redirect_to salaries_url, notice: 'El sueldo a sido eliminado.' }
+      format.html { redirect_to salaries_url, notice: 'Salary was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class SalariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def salary_params
-      params.require(:salary).permit(:mes, :worker_id, :monto)
+      params.require(:salary).permit(:monto, :mes, :worker_id)
     end
 end

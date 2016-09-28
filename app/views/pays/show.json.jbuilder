@@ -1,1 +1,1 @@
-json.extract! @pay, :id, :mes, :fecha, :apoderado_id, :monto, :created_at, :updated_at
+json.extract! @pay, :id, :mes, :fecha, :parents_id, :monto, :created_at, :updated_at

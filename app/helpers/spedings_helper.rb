@@ -1,0 +1,2 @@
+module SpedingsHelper
+end

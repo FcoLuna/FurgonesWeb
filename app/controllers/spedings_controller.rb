@@ -1,34 +1,34 @@
 class SpedingsController < ApplicationController
-  before_action :set_spending, only: [:show, :edit, :update, :destroy]
+  before_action :set_speding, only: [:show, :edit, :update, :destroy]
 
-  # GET /spendings
-  # GET /spendings.json
+  # GET /spedings
+  # GET /spedings.json
   def index
-    @spedings= Speding.paginate(:page => params[:page], :per_page => 10)
+    @spedings = Speding.paginate(:page => params[:page], :per_page => 10)
   end
 
-  # GET /spendings/1
-  # GET /spendings/1.json
+  # GET /spedings/1
+  # GET /spedings/1.json
   def show
   end
 
-  # GET /spendings/new
+  # GET /spedings/new
   def new
-    @snding = Speding.new
+    @speding = Speding.new
   end
 
-  # GET /spendings/1/edit
+  # GET /spedings/1/edit
   def edit
   end
 
-  # POST /spendings
-  # POST /spendings.json
+  # POST /spedings
+  # POST /spedings.json
   def create
-    @spending = Speding.new(spending_params)
+    @speding = Speding.new(speding_params)
 
     respond_to do |format|
-      if @spending.save
-        format.html { redirect_to @speding, notice: 'Gasto regustrado con exito.' }
+      if @speding.save
+        format.html { redirect_to @speding, notice: 'Speding was successfully created.' }
         format.json { render :show, status: :created, location: @speding }
       else
         format.html { render :new }
@@ -37,12 +37,12 @@ class SpedingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /spendings/1
-  # PATCH/PUT /spendings/1.json
+  # PATCH/PUT /spedings/1
+  # PATCH/PUT /spedings/1.json
   def update
     respond_to do |format|
-      if @speding.update(spending_params)
-        format.html { redirect_to @speding, notice: 'Gasto editado con Exito.' }
+      if @speding.update(speding_params)
+        format.html { redirect_to @speding, notice: 'Speding was successfully updated.' }
         format.json { render :show, status: :ok, location: @speding }
       else
         format.html { render :edit }
@@ -51,24 +51,24 @@ class SpedingsController < ApplicationController
     end
   end
 
-  # DELETE /spendings/1
-  # DELETE /spendings/1.json
+  # DELETE /spedings/1
+  # DELETE /spedings/1.json
   def destroy
     @speding.destroy
     respond_to do |format|
-      format.html { redirect_to spendings_url, notice: 'Gasto eliminado.' }
+      format.html { redirect_to spedings_url, notice: 'Speding was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_spending
+    def set_speding
       @speding = Speding.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def spending_params
+    def speding_params
       params.require(:speding).permit(:nombre, :monto, :van_id)
     end
 end

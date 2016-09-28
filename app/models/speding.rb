@@ -5,5 +5,5 @@ class Speding < ActiveRecord::Base
   validates_numericality_of :monto, greater_than_or_equal_to: 0,
                             :message => "Debe ser positivo"
   validates_numericality_of :monto,less_than_or_equal_to:9999999,
-                            :message => "Parece ser muy grande"
+:message => "Parece ser muy grande"
 end
