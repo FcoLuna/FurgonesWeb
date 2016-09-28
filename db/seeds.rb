@@ -18,6 +18,17 @@ Parent.create(nombre: 'Lucia', apellido: 'Garrido',telefono: '67428890',rut:'11.
 Parent.create(nombre: 'Macarena', apellido: 'Mellado',telefono: '34674468',rut:'14.634.541-7',pago:'34000')
 Parent.create(nombre: 'Fernanda', apellido: 'Garcia',telefono: '67534880',rut:'23.087.542-1',pago:'50000')
 
+School.create(nombre: 'Colegio San Andres', telefono: '76094568', direccion: 'av Malloco #67345', comuna: 'Peñaflor')
+School.create(nombre: 'Niño Dios de Malloco', telefono: '89453279', direccion: 'Vicuña Maquena #7745', comuna: 'Peñaflor')
+
+Van.create(patente: 'GB-LT-31', capacidad: '28', estado: 'Exelente', kilimetrage: '500000')
+Van.create(patente: 'VK-29-31', capacidad: '25', estado: 'Exelente', kilimetrage: '400000')
+
+Worker.create(nombre: 'Luis', apellido: 'Garcia', rut: '12.604.221-3', tipo_trabajador: 'Chofer', sueldo: '400000', van_id: '1')
+Worker.create(nombre: 'Maria', apellido: 'Castillo', rut: '21.046.116-7', tipo_trabajador: 'Auxiliar', sueldo: '200000', van_id: '1')
+Worker.create(nombre: 'Javier', apellido: 'Ortega', rut: '17.090.021-9', tipo_trabajador: 'Chofer', sueldo: '350000', van_id: '2')
+Worker.create(nombre: 'Franco', apellido: 'Gutierrez', rut: '19.904.725-6', tipo_trabajador: 'Auxiliar', sueldo: '150000', van_id: '2')
+
 Pay.create(mes: 'Marzo', parent_id: '1', monto: '30000',created_at:'2016-08-27 01:43:25 UTC ')
 Pay.create(mes: 'Marzo', parent_id: '7', monto: '34000',created_at:'2016-03-04 01:43:25 UTC ')
 Pay.create(mes: 'Abril', parent_id: '8', monto: '80000',created_at:'2016-11-07 01:43:25 UTC ')
