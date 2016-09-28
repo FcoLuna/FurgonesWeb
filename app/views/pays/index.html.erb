@@ -24,7 +24,7 @@
   <tbody>
     <% @pays.each do |pay| %>
       <tr>
-        <td><%= pay.parent.nombre %></td>
+        <td><%= pay.parent.nombre  ? @pay.parent.nombre : 'Asigne Apoderado' %></td>
         <td><%= pay.mes %></td>
         <td><%= pay.created_at.strftime "%d-%m-%Y" %></td>
         <td><%= pay.monto %></td>
