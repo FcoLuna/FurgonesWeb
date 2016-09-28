@@ -5,12 +5,21 @@ class PaysController < ApplicationController
   # GET /pays.json
   def index
     @pays = Pay.paginate(:page => params[:page], :per_page => 10)
+    respond_to do |format|
+        format.html
+      format.pdf do
+    pdf = PaysPdf.new(@pays)
+    send_data pdf.render, :filename =>'Pays.pdf',
+    :type =>'aplication/pdf',
+   :disposition => 'inline'
   end
+end
+end
 
   # GET /pays/1
   # GET /pays/1.json
   def show
-  end
+    end
 
   # GET /pays/new
   def new

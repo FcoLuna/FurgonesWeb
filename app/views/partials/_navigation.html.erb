@@ -50,28 +50,21 @@
                               <li ><%= link_to 'Julio', manage_julio_path%></li>
                                 <li ><%= link_to 'Agosto', manage_agosto_path%></li>
                                   <li ><%= link_to 'Septiembre', manage_septiembre_path%></li>
-                                    <li ><%= link_to 'Octubre', manage_octubre_path%></li>
-                                      <li ><%= link_to 'Noviembre', manage_noviembre_path%></li>
-                                        <li ><%= link_to 'Diciembre', manage_diciembre_path%></li>
-
-                      </ul>
+                      <li ><%= link_to 'Octubre', manage_octubre_path%></li>
+                    <li ><%= link_to 'Noviembre', manage_noviembre_path%></li>
+                <li ><%= link_to 'Diciembre', manage_diciembre_path%></li>
+            </ul>
                   <%end%>
                   </li>
         <%if user_signed_in?%>
-                          <li ><%= link_to 'Registros', controller: 'registries'%></li>
-                      <li >
-              <%= link_to "Editar Perfil", edit_user_registration_path(current_user) %>
-            </li>
+            <li ><%= link_to 'Registros', controller: 'registries'%></li>
+            <li > <%= link_to "Editar Perfil", edit_user_registration_path(current_user) %></li>
             <li>
               <%= link_to "Cerrar Sessión",destroy_user_session_path,method: :delete %>
             </li>
         <%else%>
-            <li>
-                <%= link_to "Ingresar", new_user_session_path %>
-            </li>
-            <li>
-             <%= link_to "Registrarse", new_user_registration_path %>
-            </li>
+            <li><%= link_to "Ingresar", new_user_session_path %></li>
+            <li><%= link_to "Registrarse", new_user_registration_path %></li>
         <%end%>
 
 
