@@ -21,7 +21,7 @@
         <td><%= speding.nombre %></td>
         <td><%= speding.monto %></td>
         <td><%= speding.created_at.strftime "%d-%m-%Y" %></td>
-        <td><%= speding.van.patente %></td>
+        <td><%= speding.van ? speding.van.patente : 'Asigne Furgon'   %></td>
         <td><%= link_to 'Mostrar', speding,class:"btn btn-primary btn-lg active btn-sm "%></td>
         <td><%= link_to 'Editar', edit_speding_path(speding), class:"btn btn-warning btn-lg active btn-sm " %></td>
           <td><%= link_to 'Eliminar', speding, method: :delete, data: { confirm: '¿Està seguro de eliminar el gasto?' },class:"btn btn-danger btn-lg active btn-sm " %></td>

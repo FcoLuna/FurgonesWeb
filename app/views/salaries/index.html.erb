@@ -18,7 +18,7 @@
   <tbody>
     <% @salaries.each do |salary| %>
       <tr>
-        <td><%= salary.worker.nombre ? @salary.worker.nombre : 'Asigne Trabajador' %></td>
+        <td><%= salary.worker ? salary.worker.nombre : 'Asigne Trabajador' %></td>
         <td><%= salary.mes %></td>
         <td><%= salary.created_at.strftime "%d-%m-%Y" %></td>
         <td><%= salary.monto %></td>
